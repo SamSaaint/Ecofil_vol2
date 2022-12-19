@@ -1,0 +1,64 @@
+<% layout("layouts/boilerplate") %>
+<div>
+    <form action="/produkty/filtracne-telesa" method="POST">
+        <div>
+            <label for="nazov">Názov</label>
+            <input type="text" name="filtracneTeleso[nazov]" id="nazov" required>
+        </div>
+        <div>
+            <label for="obrazok">Fotka</label>
+            <input type="text" name="filtracneTeleso[obrazok]" id="obrazok" required>
+        </div>
+        <div>
+            <label for="normPrietok">Norm. Prietok</label>
+            <input type="text" name="filtracneTeleso[normPrietok]" id="normPrietok" required>
+        </div>
+        <div>
+            <label for="filtrSchopnost">Filtr. Schopnosť</label>
+            <input type="text" name="filtracneTeleso[filtrSchopnost]" id="filtrSchopnost" required>
+        </div>
+        <div>
+            <label for="maxTepOleja">Maximálna Teplota Oleja </label>
+            <input type="text" name="filtracneTeleso[maxTepOleja]" id="maxTepOleja" required>
+        </div>
+        <div>
+            <label for="maxObjNadrze">Maximálny objem nádrže</label>
+            <input type="text" name="filtracneTeleso[maxObjNadrze]" id="maxObjNadrze" required>
+        </div>
+        <div>
+            <label for="viskVstupnehoOleja">Viskozita vstupného oleja</label>
+            <input type="text" name="filtracneTeleso[viskVstupnehoOleja]" id="viskVstupnehoOleja" required>
+        </div>
+        <div>
+            <label for="prevSkusTlak">Prevádzkovy / Skúšobný tlak</label>
+            <input type="text" name="filtracneTeleso[prevSkusTlak]" id="prevSkusTlak" required>
+        </div>
+        <div>
+            <label for="hydrPripVstup">Hydraulický prípoj - vstup</label>
+            <input type="text" name="filtracneTeleso[hydrPripVstup]" id="hydrPripVstup" required>
+        </div>
+        <div>
+            <label for="hydrPripVystup">Hydraulický prípoj - výstup</label>
+            <input type="text" name="filtracneTeleso[hydrPripVystup]" id="hydrPripVystup" required>
+        </div>
+        <div>
+            <label for="vonkRozm">Vonkajšie rozmery</label>
+            <input type="text" name="filtracneTeleso[vonkRozm]" id="vonkRozm" required>
+        </div>
+        <div>
+            <label for="hmotnost">Hmotnost</label>
+            <input type="number" name="filtracneTeleso[hmotnost]" id="hmotnost" step=".01" required>
+        </div>
+        <div>
+            <label for="filtrVlozka">Filtračná Vlozka</label>
+            <input type="text" name="filtracneTeleso[filtrVlozka]" id="filtrVlozka" required>
+        </div>
+        <div>
+            <label for="material">Materiál</label>
+            <input type="text" name="filtracneTeleso[material]" id="material" required>
+        </div>
+        <div>
+            <button>Pridaj filtračné teleso</button>
+        </div>
+    </form>
+</div>

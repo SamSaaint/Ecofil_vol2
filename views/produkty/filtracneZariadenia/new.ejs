@@ -1,0 +1,33 @@
+<% layout("layouts/boilerplate") %>
+
+<div>
+    <form action="/produkty/filtracne-zariadenia" method="POST">
+        <div>
+            <label for="nazov">Názov</label>
+            <input type="text" name="filtracneZariadenie[nazov]" id="nazov" required>
+        </div>
+        <div>
+            <label for="obrazok">Fotka</label>
+            <input type="text" name="filtracneZariadenie[obrazok]" id="obrazok" required>
+        </div>
+        <div>
+            <label for="objOlejNad">Objem olejovej nádrže</label>
+            <input type="text" name="filtracneZariadenie[objOlejNad]" id="objOlejNad" required>
+        </div>
+        <div>
+            <label for="elMotor">El. Motor</label>
+            <input type="text" name="filtracneZariadenie[elMotor]" id="elMotor" required>
+        </div>
+        <div>
+            <label for="normPriet">Norm. Prietok</label>
+            <input type="text" name="filtracneZariadenie[normPriet]" id="normPriet" required>
+        </div>
+        <div>
+            <label for="maxTlak">Max. tlak</label>
+            <input type="text" name="filtracneZariadenie[maxTlak]" id="maxTlak" required>
+        </div>
+        <div>
+            <button>Pridaj filtračné zariadenie</button>
+        </div>
+    </form>
+</div>

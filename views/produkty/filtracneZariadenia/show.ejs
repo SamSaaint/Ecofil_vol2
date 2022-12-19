@@ -1,0 +1,28 @@
+<% layout("layouts/boilerplate") %>
+<div>
+    <h3><%= zariadenie.nazov %></h3>
+    <img src="<%= zariadenie.obrazok %>" alt="obrazok">
+    <table>
+        <tbody>
+            <tr>
+                <td>Objem olejovej nádrže</td>
+                <td><%= zariadenie.objOlejNad %></td>
+            </tr>
+            <tr>
+                <td>El. motor</td>
+                <td><%= zariadenie.elMotor %></td>
+            </tr>
+            <tr>
+                <td>Normálny prietok</td>
+                <td><%= zariadenie.normPriet %></td>
+            </tr>
+            <tr>
+                <td>Maximálny tlak</td>
+                <td><%= zariadenie.maxTlak %></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/produkty/filtracne-zariadenia/<%=zariadenie._id%>/edit">uprav filtračné zariadenie</a>
+    <form action="/produkty/filtracne-zariadenia/<%= zariadenie._id %>?_method=DELETE" method="POST">
+    <button>Odstráň filtračné zariadenie</button>
+</div>

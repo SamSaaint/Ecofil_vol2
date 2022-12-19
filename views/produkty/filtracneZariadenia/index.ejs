@@ -1,0 +1,30 @@
+<% layout("layouts/boilerplate") %>
+<h1>Filtračné zariadenia</h1>
+<a href="/produkty/filtracne-zariadenia/new">Pridaj filtračné zariadenie</a>
+
+<% for(let zariadenie of zariadenia) { %>
+    <div>
+        <h3><a href="/produkty/filtracne-zariadenia/<%=zariadenie._id%>"><%= zariadenie.nazov %></a></h3>
+        <img src="<%= zariadenie.obrazok %>" alt="obrazok">
+        <table>
+            <tbody>
+                <tr>
+                    <td>Objem olejovej nádrže</td>
+                    <td><%= zariadenie.objOlejNad %></td>
+                </tr>
+                <tr>
+                    <td>El. motor</td>
+                    <td><%= zariadenie.elMotor %></td>
+                </tr>
+                <tr>
+                    <td>Normálny prietok</td>
+                    <td><%= zariadenie.normPriet %></td>
+                </tr>
+                <tr>
+                    <td>Maximálny tlak</td>
+                    <td><%= zariadenie.maxTlak %></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<% } %>

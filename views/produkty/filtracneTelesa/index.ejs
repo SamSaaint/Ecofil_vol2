@@ -1,0 +1,62 @@
+<% layout("layouts/boilerplate") %>
+<h1>Filtračné telesá</h1>
+<a href="/produkty/filtracne-telesa/new">Pridaj filtračné teleso</a>
+
+<% for(let teleso of telesa) { %>
+    <div>
+        <h3><a href="/produkty/filtracne-telesa/<%=teleso._id%>"><%= teleso.nazov %></a></h3>
+        <img src="<%= teleso.obrazok %>" alt="obrazok">
+        <table>
+            <tbody>
+                <tr>
+                    <td>Normálny Prietok</td>
+                    <td><%= teleso.normPrietok %></td>
+                </tr>
+                <tr>
+                    <td>Filtračná schopnosť</td>
+                    <td><%= teleso.filtrSchopnost %></td>
+                </tr>
+                <tr>
+                    <td>Max. teplota oleja</td>
+                    <td><%= teleso.maxTepOleja %></td>
+                </tr>
+                <tr>
+                    <td>Max. objem nádrže</td>
+                    <td><%= teleso.maxObjNadrze %></td>
+                </tr>
+                <tr>
+                    <td>Viskozita vstupného oleja</td>
+                    <td><%= teleso.viskVstupnehoOleja %></td>
+                </tr>
+                <tr>
+                    <td>Prevádzkový / skúšobný tlak</td>
+                    <td><%= teleso.prevSkusTlak %></td>
+                </tr>
+                <tr>
+                    <td>Hydr. pripojenie - vstup</td>
+                    <td><%= teleso.hydrPripVstup %></td>
+                </tr>
+                <tr>
+                    <td>Hydr. pripojenie - výstup</td>
+                    <td><%= teleso.hydrPripVystup %></td>
+                </tr>
+                <tr>
+                    <td>Vonkajšie rozmery</td>
+                    <td><%= teleso.vonkRozm %></td>
+                </tr>
+                <tr>
+                    <td>Hmotnosť</td>
+                    <td><%= teleso.hmotnost %></td>
+                </tr>
+                <tr>
+                    <td>Filtračná vložka</td>
+                    <td><%= teleso.filtrVlozka %></td>
+                </tr>
+                <tr>
+                    <td>Materiál</td>
+                    <td><%= teleso.material %></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<% } %>

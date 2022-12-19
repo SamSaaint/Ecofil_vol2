@@ -1,0 +1,48 @@
+<% layout("layouts/boilerplate") %>
+<div>
+    <form action="/produkty/filtracne-vlozky" method="POST">
+        <div>
+            <label for="typ">Typ</label>
+            <input type="text" name="filtracnaVlozka[typ]" id="typ" required>
+        </div>
+        <div>
+            <label for="obrazok">Fotka</label>
+            <input type="text" name="filtracnaVlozka[obrazok]" id="obrazok" required>
+        </div>
+        <div>
+            <label for="material">Materiál</label>
+            <input type="text" name="filtracnaVlozka[material]" id="material" required>
+        </div>
+        <div>
+            <label for="priemer">Priemer (mm)</label>
+            <input type="number" name="filtracnaVlozka[priemer]" id="priemer" step=".01" required>
+        </div>
+        <div>
+            <label for="vyska">Výška (mm)</label>
+            <input type="number" name="filtracnaVlozka[vyska]" id="vyska" step=".01" required>
+        </div>
+        <div>
+            <label for="hmotnost">Hmotnosť (g)</label>
+            <input type="number" name="filtracnaVlozka[hmotnost]" id="hmotnost" step=".01" required>
+        </div>
+        <div>
+            <label for="prietok">Prietok (l/min)</label>
+            <input type="number" name="filtracnaVlozka[prietok]" id="prietok" step=".01" required>
+        </div>
+        <div>
+            <label for="absorbVody">Absorbcia vody (l)</label>
+            <input type="number" name="filtracnaVlozka[absorbVody]" id="absorbVody" step=".01" required>
+        </div>
+        <div>
+            <label for="kapFiltr">Kapacita filtrácie (NAS)</label>
+            <input type="text" name="filtracnaVlozka[kapFiltr]" id="kapFiltr" required>
+        </div>
+        <div>
+            <label for="filtrZar">Filtračné zariadenie</label>
+            <input type="text" name="filtracnaVlozka[filtrZar]" id="filtrZar" required>
+        </div>
+        <div>
+            <button>Pridaj filtračnú vložku</button>
+        </div>
+    </form>
+</div>
