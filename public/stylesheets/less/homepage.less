@@ -1,0 +1,95 @@
+// parallaxes
+#parallax-1 {
+    background-image:url(/images/parallax1.jpg);
+}
+
+#parallax-2 {
+    background-image:url(/images/parallax2.jpg);
+}
+
+//video section styles
+#video-container {
+    height:300px;
+    width:100%;
+    overflow:hidden;
+    video {
+        object-fit:cover; 
+        width:100%;
+        height:100%;
+        object-position:center;
+    }
+}
+
+#video-lower-bar {
+    background-color:@blue-main;
+    width:68%;
+    height:@bar-height;
+    transform:skew(-25deg) translateX(-10px);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    position:absolute;
+}
+
+// zakladny program section styles
+#zak-prog-container {
+    .container;
+    li {
+        line-height: 2.5rem;
+        font-weight: 500;
+    };
+    p {
+        line-height: 1.7rem;
+        padding-top:2rem;
+    }
+}
+
+//historia section styles
+#historia-container {
+    .container;
+    background-color:@grey-light; 
+    span {
+        font-weight:500;
+        display:inline-block;
+        line-height: 1.5rem;
+    }  
+}
+
+#isologos-container {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    margin-top:3rem;
+}
+
+.isologos {
+    width:16rem;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    p {
+        text-align:center;
+        color:@black-main;
+    }
+}
+
+// about section styles
+#about-container {
+    .container;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    background-color:@orange-main;
+}
+
+.about-container-area {
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    h3 {
+        color:#fff;
+        margin:0.5rem 0rem;
+        font-weight:500;
+    };
+    p {
+        margin:0.5rem 0;
+    }
+}

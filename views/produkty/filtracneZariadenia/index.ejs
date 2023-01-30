@@ -1,30 +1,211 @@
 <% layout("layouts/boilerplate") %>
-<h1>Filtračné zariadenia</h1>
-<a href="/produkty/filtracne-zariadenia/new">Pridaj filtračné zariadenie</a>
+<section class="breadcrumbs">
+    <ul>
+        <a href="/produkty"><li>Produkty</li></a>
+        <li> / </li>
+        <a href=""><li>Filtračné zariadenia</li></a>
+    </ul>
+</section>
 
-<% for(let zariadenie of zariadenia) { %>
-    <div>
-        <h3><a href="/produkty/filtracne-zariadenia/<%=zariadenie._id%>"><%= zariadenie.nazov %></a></h3>
-        <img src="<%= zariadenie.obrazok %>" alt="obrazok">
-        <table>
-            <tbody>
-                <tr>
-                    <td>Objem olejovej nádrže</td>
-                    <td><%= zariadenie.objOlejNad %></td>
-                </tr>
-                <tr>
-                    <td>El. motor</td>
-                    <td><%= zariadenie.elMotor %></td>
-                </tr>
-                <tr>
-                    <td>Normálny prietok</td>
-                    <td><%= zariadenie.normPriet %></td>
-                </tr>
-                <tr>
-                    <td>Maximálny tlak</td>
-                    <td><%= zariadenie.maxTlak %></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-<% } %>
+<section class="uvod">
+        <section class="uvod-text">
+            <h1>Filtračné zariadenia</h1>
+            <h3>Filtrácia filtračnými zariadeniami má niekoľko výhod:</h3>
+            <ul>
+                <li>Z dôvodu neprítomnosti spaľovania a udržiavaním čistoty oleja na veľmi vysokom stupni sa výmeny oleja stávajú nepotrebnými. Absorbciou viac ako 90 % všetkých kontaminantov, ako sú kovové častice, piesok a prach, hydraulická kvapalina, ktorá je v porovnaní s hydraulickým olejom veľmi drahá, ostáva čistá a udržuje si schopnosť plnenia svojej funkcie. Preto nemusí byť vypúšťaná a má skoro nekonečnú životnosť. </li>
+                <li>Väčšina kontaminantov je zachytených obtokovým filtrom, čím sa zabraňuje nasýteniu plno-prietokového filtra. Preto filtre nemusia byť menené tak často.</li>
+                <li>Zachytenie časticových kontaminantov zabraňuje vplyvu týchto častíc na komponenty stroja. Normálne opotrebenie sa redukuje na absolútne minimum. Predchádza sa výmene náhradných dielov pre čerpadlá, motory, piesty, valce atď. </li>
+                <li>Redukcia opotrebenia predlžuje životnosť komponentov aj celého stroja.</li>
+                <li>Redukcia nákladov na opravy.</li>
+            </ul>
+        </section>
+        <div class="uvod-img">
+            <img src="/images/ecofil_filtration_devices.png" alt="Filtračné zariadenia" height="350px">
+        </div>
+</section>
+
+<section class="operations">
+    <a href="/produkty/filtracne-zariadenia/new"><img src="/icons/plus-circle-fill.svg" width="40px" alt="pridaj zariadenie"></a>
+</section>
+
+<section class="content">
+    <h2 class="content-header">Filtračné zariadenia rady SN</h2>
+    <section class="content-cat">
+        <% for(let zariadenie of zariadenia) { %>
+            <% if(zariadenie.kategoria == "Rada SN"){ %>
+            <section onclick="location.href='/produkty/filtracne-zariadenia/<%=zariadenie._id%>'" class="content-item">
+                <div class="content-item-img">
+                    <img src="<%= zariadenie.obrazok %>" alt="obrazok" width="160px">
+                </div>
+                <div class="content-item-description">
+                    <h3><%= zariadenie.nazov %></h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="table-title">Objem olejovej nádrže</td>
+                                <td><%= zariadenie.objOlejNad %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">El. motor</td>
+                                <td><%= zariadenie.elMotor %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Normálny prietok</td>
+                                <td><%= zariadenie.normPriet %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Maximálny tlak</td>
+                                <td><%= zariadenie.maxTlak %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <% } %>
+        <% } %>                                     
+    </section>
+
+    <h2 class="content-header">Filtračné zariadenia rady ONW</h2>
+    <section class="content-cat">
+        <% for(let zariadenie of zariadenia) { %>
+            <% if(zariadenie.kategoria == "Rada ONW"){ %>
+            <section onclick="location.href='/produkty/filtracne-zariadenia/<%=zariadenie._id%>'" class="content-item">
+                <div class="content-item-img">
+                    <img src="<%= zariadenie.obrazok %>" alt="obrazok">
+                </div>
+                <div class="content-item-description">
+                    <h3><%= zariadenie.nazov %></h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="table-title">Objem olejovej nádrže</td>
+                                <td><%= zariadenie.objOlejNad %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">El. motor</td>
+                                <td><%= zariadenie.elMotor %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Normálny prietok</td>
+                                <td><%= zariadenie.normPriet %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Maximálny tlak</td>
+                                <td><%= zariadenie.maxTlak %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <% } %>
+        <% } %>                                     
+    </section>
+
+    <h2 class="content-header">Zariadenia na filtráciu transformátorových olejov</h2>
+    <section class="content-cat">
+        <% for(let zariadenie of zariadenia) { %>
+            <% if(zariadenie.kategoria == "Transformátorové"){ %>
+            <section onclick="location.href='/produkty/filtracne-zariadenia/<%=zariadenie._id%>'" class="content-item">
+                <div class="content-item-img">
+                    <img src="<%= zariadenie.obrazok %>" alt="obrazok">
+                </div>
+                <div class="content-item-description">
+                    <h3><%= zariadenie.nazov %></h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="table-title">Objem olejovej nádrže</td>
+                                <td><%= zariadenie.objOlejNad %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">El. motor</td>
+                                <td><%= zariadenie.elMotor %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Normálny prietok</td>
+                                <td><%= zariadenie.normPriet %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Maximálny tlak</td>
+                                <td><%= zariadenie.maxTlak %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <% } %>
+        <% } %>                                     
+    </section>
+
+    <h2 class="content-header">Zariadenia na filtráciu do výbušného prostredia v nevýbušnom prevedení</h2>
+    <section class="content-cat">
+        <% for(let zariadenie of zariadenia) { %>
+            <% if(zariadenie.kategoria == "Výbušné"){ %>
+            <section onclick="location.href='/produkty/filtracne-zariadenia/<%=zariadenie._id%>'" class="content-item">
+                <div class="content-item-img">
+                    <img src="<%= zariadenie.obrazok %>" alt="obrazok">
+                </div>
+                <div class="content-item-description">
+                    <h3><%= zariadenie.nazov %></h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="table-title">Objem olejovej nádrže</td>
+                                <td><%= zariadenie.objOlejNad %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">El. motor</td>
+                                <td><%= zariadenie.elMotor %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Normálny prietok</td>
+                                <td><%= zariadenie.normPriet %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Maximálny tlak</td>
+                                <td><%= zariadenie.maxTlak %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <% } %>
+        <% } %>                                     
+    </section>
+
+    <h2 class="content-header">Špeciálne zariadenia</h2>
+    <section class="content-cat">
+        <% for(let zariadenie of zariadenia) { %>
+            <% if(zariadenie.kategoria == "Špeciálne"){ %>
+            <section onclick="location.href='/produkty/filtracne-zariadenia/<%=zariadenie._id%>'" class="content-item">
+                <div class="content-item-img">
+                    <img src="<%= zariadenie.obrazok %>" alt="obrazok">
+                </div>
+                <div class="content-item-description">
+                    <h3><%= zariadenie.nazov %></h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="table-title">Objem olejovej nádrže</td>
+                                <td><%= zariadenie.objOlejNad %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">El. motor</td>
+                                <td><%= zariadenie.elMotor %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Normálny prietok</td>
+                                <td><%= zariadenie.normPriet %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Maximálny tlak</td>
+                                <td><%= zariadenie.maxTlak %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <% } %>
+        <% } %>                                     
+    </section>
+</section>

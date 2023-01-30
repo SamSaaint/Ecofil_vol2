@@ -1,16 +1,18 @@
 const express = require("express");
 const router = express.Router();
 const Vlozka = require("../../../models/filtracnaVlozka");
+const Zariadenie = require("../../../models/filtracneZariadenie");
 
 // show all
 router.get("/", async (req,res)=>{
-    const vlozky = await Vlozka.find({});
+    const vlozky = await Vlozka.find({}).populate({ path:"filtrZar" });
     res.render("../views/produkty/filtracneVlozky", { vlozky })
 })
 
 // add new vlozka
-router.get("/new", (req,res)=>{
-    res.render("../views/produkty/filtracneVlozky/new")
+router.get("/new", async (req,res)=>{
+    const zariadenia = await Zariadenie.find({});
+    res.render("../views/produkty/filtracneVlozky/new", { zariadenia })
 })
 
 router.post("/", async (req,res)=>{
@@ -22,7 +24,8 @@ router.post("/", async (req,res)=>{
 // edit vlozka
 router.get("/:id/edit", async (req,res)=>{
     const vlozka = await Vlozka.findById(req.params.id);
-    res.render("../views/produkty/filtracneVlozky/edit", { vlozka });
+    const zariadenia = await Zariadenie.find({});
+    res.render("../views/produkty/filtracneVlozky/edit", { vlozka, zariadenia });
 })
 
 router.put("/:id", async (req,res)=>{

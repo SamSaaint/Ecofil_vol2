@@ -14,8 +14,15 @@ const telesoSchema = new Schema({
     hydrPripVystup: String,
     vonkRozm: String,
     hmotnost: Number,
-    filtrVlozka: String,
-    material: String
+    filtrVlozka: {
+        type:Schema.Types.ObjectId,
+        ref:"Vlozka"
+    },
+    material: String,
+    kategoria: {
+        type:String,
+        enum:["Séria T", "Séria H", "Ostatné"]
+    }
 });
 
 module.exports = mongoose.model("Teleso", telesoSchema);

@@ -1,2 +1,106 @@
 <% layout("layouts/boilerplate") %>
-<h1>Povrchová filtrácia</h1>
+<section class="breadcrumbs">
+    <ul>
+        <a href="/filtracia-oleja"><li>Filtrácia oleja</li></a>
+        <li> / </li>
+        <a href="/"><li>Povrchová filtrácia</li></a>
+    </ul>
+</section>
+
+<section class="container-narrow filtr-sec-container">
+    <div class="filtr-sec-left">
+        <h2>Filtrácia oleja</h2>
+        <ul>
+            <a href="/filtracia-oleja/by-pass-filtracia"><li>By-pass filtrácia</li></a>
+            <a href="/filtracia-oleja/predlzenie-zivotnosti-oleja"><li>Predĺženie životnosti oleja</li></a>
+            <a href="/filtracia-oleja/kontaminacia-oleja"><li>Kontaminácia oleja</li></a>
+            <a href="/filtracia-oleja/filtracia-vseobecne"><li>Filtrácia všeobecne</li></a>
+            <a href="/filtracia-oleja/nova-generacia-filtracie"><li>Nová generácia filtrácie</li></a>
+            <a href="/filtracia-oleja/povrchova-filtracia"><li style="background:orange;color:black">Povrchová filtrácia</li></a>
+            <a href="/filtracia-oleja/hlbkova-filtracia"><li>Hĺbková filtrácia</li></a>
+            <a href="/filtracia-oleja/ucinnost-filtracie"><li>Účinnosť filtrácie</li></a>
+        </ul>
+    </div>
+    <div class="filtr-sec-right">
+        <h2>Povrchová filtrácia</h2>
+        <p>Povrchová filtrácia je priame zachytávanie častíc na filtračnom médiu. Častice, ktoré sú väčšie ako je veľkosť otvorov alebo pórov filtračného média sa zachytia na povrchu filtra. Veľkosti týchto otvorov chránia takýmto spôsobom systém.</p>
+        <p>Táto filtrácia sa často používa v kombinácii s hĺbkovou filtráciou z dôvodu ochrany hĺbkových filtrov, ktoré sú často mnohokrát drahšie ako povrchové filtre. Povrchová filtrácia sa často používa pri oddeľovaní kvapalín a pevných častíc a pri oddeľovaní dvoch pevných častíc. V mnohých prípadoch (okrem membránových filtrov) tieto filtre predstavujú nominálnu filtráciu a používajú sa ako sacie alebo vratné filtre resp. v kombinácii s ostatnými filtrami.</p>
+        <div class="filtr-sec-visual">
+            <img src="/images/filtracia-oleja/pov-fil.png" width="280" alt="Povrchova filtracia">
+            <div>
+                <p><strong>Spôsob ukladania častíc pri povrchovom sitovaní</strong></p>
+                <ol>
+                    <li>kvapalina na vstupe do filtra</li>
+                    <li>nečistoty</li>
+                    <li>filtračné médium</li>
+                    <li>medzný otvor</li>
+                    <li>kvapalina na výstupe z filtra</li>
+                </ol>
+            </div>
+        </div>
+        <p><strong>Ak sú však filtre s povrchovou filtráciou vplyvom prietoku média znečistené, môžu nastať tieto efekty:</strong></p>
+        <ul>
+            <li>Ak sú všetky póry, alebo otvory zaplnené nečistotami, novo prichádzajúce nečistoty môžu spôsobiť uvoľňovanie častíc, ktoré tam boli zachytené predtým. Tým sa systém ďalej nečistí, naopak môže spôsobiť uvoľnenie zhlukov a tým ho znečistiť ešte viac. Havarijným prípadom je keď nastane roztrhnutie povrchu filtračného média a častice sa uvoľnia do nosnej kvapaliny. Systém ostáva bez filtrácie.</li>
+            <li>Ak sú všetky póry alebo otvory zaplnené časticami, novo prichádzajúce nečistoty a to najmä veľmi malé (často zhluky) vytvoria na povrchu novú filtračnú vrstvu, ktorá je sama osebe filtrom. Vytvorí sa tzv. filtračný koláč. Tento efekt sa využíva najmä pri filtrácii rezných a brúsnych emulzií. Výšku koláča je však potrebné kontrolovať, lebo pri prekročení kritickej hrúbky sa silne znižuje prietok, alebo dochádza k pretrhnutiu filtračného materiálu.</li>
+            <li>Pri vyšších tlakoch, alebo prúdení kvapaliny z vysokou rýchlosťou môže nastať jav, ako cez otvor alebo póry s určitou veľkosťou prejde častica väčšia ako je veľkosť otvoru alebo póru.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="container-narrow def-container">
+    <h2>Definícia pojmov</h2>
+    <section class="def-section">
+        <div class="def-section-item">
+            <h3>Filtračná schopnosť</h3>
+            <p>je schopnosť filtra zachytávať častice určitej veľkosti. Na vyjadrenie filtračnej schopnosti sa používa filtračný koeficient βx a účinnosť filtra Ex.</p>
+            <h3>Absorpcia</h3>
+            <p>schopnosť média pohltiť alebo vtiahnuť látku do jej vnútra a udržať ju tam – veľmi dobrým príkladom je neupravený papier.</p>
+            <h3>Adsorpcia</h3>
+            <p>schopnosť média zastaviť alebo pozbierať látku na povrchu – veľmi dobrým príkladom je aktívne uhlie.</p>
+        </div>
+        <div class="def-section-item">
+            <h3>Koeficient beta / beta pomer (ratio)</h3>
+            <p>podľa normy ISO 4572 vyjadruje filtračnú schopnosť ako pomer medzi počtom častíc danej veľkosti vstupujúcich do filtra a počtom častíc danej veľkosti po výstupe z filtra. Výpočet danej účinnosti určí, či sa jedná o absolútnu alebo nominálnu filtráciu. Je to veľmi dôležitý parameter hodnotenia účinnosti filtračného elementu alebo filtračného média.</p>
+            <h4>βx = Nd / Nu</h4>
+            <p>βx - Beta pomer (alebo Beta účinnosť) pre kontaminanty väčšie ako x μm</p>
+            <p>Nd - Počet častíc väčších ako x μm na jednotku objemu na vstupe do filtra</p>
+            <p>Nu - Počet častíc väčších ako x μm na jednotku objemu na výstupe z filtra</p>   
+            <img src="/images/filtracia-oleja/bx.png" alt="bx formula"> 
+            <table>
+                <tr>
+                    <td><strong>βx</strong></td>
+                    <td>1</td>
+                    <td>100</td>
+                    <td>200</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td><strong>Účinnosť</strong></td>
+                    <td>0,0%</td>
+                    <td>99,0%</td>
+                    <td>99,5%</td>
+                    <td>99,9%</td>
+                </tr>
+            </table>
+        </div>
+        <div class="def-section-item">
+            <h3>Účinnosť filtra Ex</h3>
+            <p>pri definovanej veľkosti častíc sa určí nasledovným spôsobom a udáva sa v %:</p>
+            <p>Ex = ( 1 - 1 / βx ) * 100 (%)</p>
+            <h3>Kapacita filtra</h3>
+            <p>objem, ktorý je schopný prijať a súčasne filtrovať pri určenej filtračnej schopnosti a prietoku.</p>
+            <h3>Jadro filtra</h3>
+            <p>vnútorný materiál filtračnej vložky, ktorý slúži ako podporný pilier, na ktorý sa upevňuje filtračné médium.</p>
+            <h3>Delta P (P)</h3>
+            <p>symbol tlakovej straty, čo znamená rozdiel tlaku meraných pred a za filtračným telesom.</p>
+        </div>
+        <div class="def-section-item">
+            <h3>Hustota</h3>
+            <p>hmotnosť zodpovedajúca priepustnosti filtračného materiálu vyjadrená v g/m2.</p>
+            <h3>Filtrát</h3>
+            <p>kvapalina, ktorá vychádza z filtračnej nádoby po vzájomnom strete s filtračným médiom, elementom. </p>
+            <h3>Mikrometer</h3>
+            <p>sa používa ako hlavné porovnávacie kritérium pre stanovenie efektivity filtračného média v absolútnom alebo nominálnom hodnotení.</p>
+        </div>
+    </section>
+</section>

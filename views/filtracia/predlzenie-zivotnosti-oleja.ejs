@@ -1,2 +1,359 @@
 <% layout("layouts/boilerplate") %>
-<h1>Predĺženie životnosti oleja</h1>
+<section class="breadcrumbs">
+    <ul>
+        <a href="/filtracia-oleja"><li>Filtrácia oleja</li></a>
+        <li> / </li>
+        <a href="/"><li>Predĺženie životnosti oleja</li></a>
+    </ul>
+</section>
+
+<section class="container-narrow filtr-sec-container">
+    <div class="filtr-sec-left">
+        <h2>Filtrácia oleja</h2>
+        <ul>
+            <a href="/filtracia-oleja/by-pass-filtracia"><li>By-pass filtrácia</li></a>
+            <a href="/filtracia-oleja/predlzenie-zivotnosti-oleja"><li style="background:orange;color:black">Predĺženie životnosti oleja</li></a>
+            <a href="/filtracia-oleja/kontaminacia-oleja"><li>Kontaminácia oleja</li></a>
+            <a href="/filtracia-oleja/filtracia-vseobecne"><li>Filtrácia všeobecne</li></a>
+            <a href="/filtracia-oleja/nova-generacia-filtracie"><li>Nová generácia filtrácie</li></a>
+            <a href="/filtracia-oleja/povrchova-filtracia"><li>Povrchová filtrácia</li></a>
+            <a href="/filtracia-oleja/hlbkova-filtracia"><li>Hĺbková filtrácia</li></a>
+            <a href="/filtracia-oleja/ucinnost-filtracie"><li>Účinnosť filtrácie</li></a>
+        </ul>
+    </div>
+    <div class="filtr-sec-right">
+        <h2>Predĺženie životnosti oleja</h2>
+        <div id="ziv-upper-container">
+            <div class="ziv-tab-control">
+                <button id="hodm-button" class="ziv-tab-button">Hydraulický olej a dieselove motory</button>
+                <button id="klts-button" class="ziv-tab-button">Klzné ložiská a turbo stroje</button>
+                <button id="vl-button" class="ziv-tab-button">Válivé ložiská</button>
+                <button id="po-button" class="ziv-tab-button">Prevodovky a ostatné</button>
+                <button id="vo-button" class="ziv-tab-button">Voda v oleji</button>
+            </div>
+            <table id="hodm-table" class="ziv-tab">
+                <tbody>
+                    <tr>
+                        <td colspan="2" class="ziv-tab-bl">NAS 1638</td>
+                        <td class="ziv-tab-bl">10</td>
+                        <td class="ziv-tab-bl">9</td>
+                        <td class="ziv-tab-bl">8</td>
+                        <td class="ziv-tab-bl">7</td>
+                        <td class="ziv-tab-bl">6</td>
+                        <td class="ziv-tab-bl">5</td>
+                        <td class="ziv-tab-bl">4</td>
+                        <td class="ziv-tab-bl">3</td>
+                    </tr>
+                    <tr>
+                        <td class="ziv-tab-bl"></td>
+                        <td class="ziv-tab-org">ISO 4406</td>
+                        <td class="ziv-tab-org">21/19/16</td>
+                        <td class="ziv-tab-org">20/18/15</td>
+                        <td class="ziv-tab-org">19/17/14</td>
+                        <td class="ziv-tab-org">18/16/13</td>
+                        <td class="ziv-tab-org">17/15/12</td>
+                        <td class="ziv-tab-org">16/14/11</td>
+                        <td class="ziv-tab-org">15/13/10</td>
+                        <td class="ziv-tab-org">14/12/9</td>
+                    </tr>
+                    <% for(tabRow of zivTables.hodm){ %>
+                        <tr>
+                            <td class="ziv-tab-bl"><%= tabRow[0] %></td>
+                            <td class="ziv-tab-org"><%= tabRow[1] %></td>
+                            <td><%= tabRow[2] %></td>
+                            <td><%= tabRow[3] %></td>
+                            <td><%= tabRow[4] %></td>
+                            <td><%= tabRow[5] %></td>
+                            <td><%= tabRow[6] %></td>
+                            <td><%= tabRow[7] %></td>
+                            <td><%= tabRow[8] %></td>
+                            <td><%= tabRow[9] %></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+
+            <table id="klts-table" class="ziv-tab">
+                <tbody>
+                    <tr>
+                        <td colspan="2" class="ziv-tab-bl">NAS 1638</td>
+                        <td class="ziv-tab-bl">10</td>
+                        <td class="ziv-tab-bl">9</td>
+                        <td class="ziv-tab-bl">8</td>
+                        <td class="ziv-tab-bl">7</td>
+                        <td class="ziv-tab-bl">6</td>
+                        <td class="ziv-tab-bl">5</td>
+                        <td class="ziv-tab-bl">4</td>
+                        <td class="ziv-tab-bl">3</td>
+                    </tr>
+                    <tr>
+                        <td class="ziv-tab-bl"></td>
+                        <td class="ziv-tab-org">ISO 4406</td>
+                        <td class="ziv-tab-org">21/19/16</td>
+                        <td class="ziv-tab-org">20/18/15</td>
+                        <td class="ziv-tab-org">19/17/14</td>
+                        <td class="ziv-tab-org">18/16/13</td>
+                        <td class="ziv-tab-org">17/15/12</td>
+                        <td class="ziv-tab-org">16/14/11</td>
+                        <td class="ziv-tab-org">15/13/10</td>
+                        <td class="ziv-tab-org">14/12/9</td>
+                    </tr>
+                    <% for(tabRow of zivTables.klts){ %>
+                        <tr>
+                            <td class="ziv-tab-bl"><%= tabRow[0] %></td>
+                            <td class="ziv-tab-org"><%= tabRow[1] %></td>
+                            <td><%= tabRow[2] %></td>
+                            <td><%= tabRow[3] %></td>
+                            <td><%= tabRow[4] %></td>
+                            <td><%= tabRow[5] %></td>
+                            <td><%= tabRow[6] %></td>
+                            <td><%= tabRow[7] %></td>
+                            <td><%= tabRow[8] %></td>
+                            <td><%= tabRow[9] %></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+
+            <table id="vl-table" class="ziv-tab">
+                <tbody>
+                    <tr>
+                        <td colspan="2" class="ziv-tab-bl">NAS 1638</td>
+                        <td class="ziv-tab-bl">10</td>
+                        <td class="ziv-tab-bl">9</td>
+                        <td class="ziv-tab-bl">8</td>
+                        <td class="ziv-tab-bl">7</td>
+                        <td class="ziv-tab-bl">6</td>
+                        <td class="ziv-tab-bl">5</td>
+                        <td class="ziv-tab-bl">4</td>
+                        <td class="ziv-tab-bl">3</td>
+                    </tr>
+                    <tr>
+                        <td class="ziv-tab-bl"></td>
+                        <td class="ziv-tab-org">ISO 4406</td>
+                        <td class="ziv-tab-org">21/19/16</td>
+                        <td class="ziv-tab-org">20/18/15</td>
+                        <td class="ziv-tab-org">19/17/14</td>
+                        <td class="ziv-tab-org">18/16/13</td>
+                        <td class="ziv-tab-org">17/15/12</td>
+                        <td class="ziv-tab-org">16/14/11</td>
+                        <td class="ziv-tab-org">15/13/10</td>
+                        <td class="ziv-tab-org">14/12/9</td>
+                    </tr>
+                    <% for(tabRow of zivTables.vl){ %>
+                        <tr>
+                            <td class="ziv-tab-bl"><%= tabRow[0] %></td>
+                            <td class="ziv-tab-org"><%= tabRow[1] %></td>
+                            <td><%= tabRow[2] %></td>
+                            <td><%= tabRow[3] %></td>
+                            <td><%= tabRow[4] %></td>
+                            <td><%= tabRow[5] %></td>
+                            <td><%= tabRow[6] %></td>
+                            <td><%= tabRow[7] %></td>
+                            <td><%= tabRow[8] %></td>
+                            <td><%= tabRow[9] %></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+
+            <table id="po-table" class="ziv-tab">
+                <tbody>
+                    <tr>
+                        <td colspan="2" class="ziv-tab-bl">NAS 1638</td>
+                        <td class="ziv-tab-bl">10</td>
+                        <td class="ziv-tab-bl">9</td>
+                        <td class="ziv-tab-bl">8</td>
+                        <td class="ziv-tab-bl">7</td>
+                        <td class="ziv-tab-bl">6</td>
+                        <td class="ziv-tab-bl">5</td>
+                        <td class="ziv-tab-bl">4</td>
+                        <td class="ziv-tab-bl">3</td>
+                    </tr>
+                    <tr>
+                        <td class="ziv-tab-bl"></td>
+                        <td class="ziv-tab-org">ISO 4406</td>
+                        <td class="ziv-tab-org">21/19/16</td>
+                        <td class="ziv-tab-org">20/18/15</td>
+                        <td class="ziv-tab-org">19/17/14</td>
+                        <td class="ziv-tab-org">18/16/13</td>
+                        <td class="ziv-tab-org">17/15/12</td>
+                        <td class="ziv-tab-org">16/14/11</td>
+                        <td class="ziv-tab-org">15/13/10</td>
+                        <td class="ziv-tab-org">14/12/9</td>
+                    </tr>
+                    <% for(tabRow of zivTables.po){ %>
+                        <tr>
+                            <td class="ziv-tab-bl"><%= tabRow[0] %></td>
+                            <td class="ziv-tab-org"><%= tabRow[1] %></td>
+                            <td><%= tabRow[2] %></td>
+                            <td><%= tabRow[3] %></td>
+                            <td><%= tabRow[4] %></td>
+                            <td><%= tabRow[5] %></td>
+                            <td><%= tabRow[6] %></td>
+                            <td><%= tabRow[7] %></td>
+                            <td><%= tabRow[8] %></td>
+                            <td><%= tabRow[9] %></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            <table id="vo-table" class="ziv-tab">
+                <thead>
+                    <tr>
+                        <td class="td-wide" rowspan="2">Obsah vody v oleji [%]</td>
+                        <td class="td-wide" rowspan="2">Obsah vody v oleji [ppm]</td>
+                        <td colspan="9">Predĺženie životnosti oleja</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ziv-tab-bl">1%</td>
+                        <td class="ziv-tab-org">10000</td>
+                        <td>2500</td>
+                        <td>1300</td>
+                        <td>900</td>
+                        <td>625</td>
+                        <td>500</td>
+                        <td>400</td>
+                        <td>300</td>
+                        <td>200</td>
+                        <td>156</td>
+                    </tr>
+                    <tr>
+                        <td class="ziv-tab-bl">0,10%</td>
+                        <td class="ziv-tab-org">1000</td>
+                        <td>250</td>
+                        <td>130</td>
+                        <td>90</td>
+                        <td>63</td>
+                        <td>50</td>
+                        <td>40</td>
+                        <td>30</td>
+                        <td>20</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td class="ziv-tab-bl">0,050%</td>
+                        <td class="ziv-tab-org">500</td>
+                        <td>125</td>
+                        <td>65</td>
+                        <td>45</td>
+                        <td>31</td>
+                        <td>25</td>
+                        <td>20</td>
+                        <td>15</td>
+                        <td>10</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td class="ziv-tab-bl">0,025%</td>
+                        <td class="ziv-tab-org">260</td>
+                        <td>2500</td>
+                        <td>1300</td>
+                        <td>900</td>
+                        <td>625</td>
+                        <td>500</td>
+                        <td>400</td>
+                        <td>300</td>
+                        <td>200</td>
+                        <td>156</td>
+                    </tr>
+                    <tr>
+                        <td class="ziv-tab-bl">0,010%</td>
+                        <td class="ziv-tab-org">100</td>
+                        <td>25</td>
+                        <td>13</td>
+                        <td>9</td>
+                        <td>6</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="ziv-pics-container">
+            <% for(p of particles){ %>
+                <figure class="ziv-pic">
+                    <img src="<%= p.source %>" alt="" width="210" height="110">
+                    <figcaption>
+                        <p><strong><%= p.captionUp %></strong></p>
+                        <p><%= p.captionDown %></p>
+                    </figcaption>
+                </figure>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+<section class="container-narrow def-container">
+    <h2>Definícia pojmov</h2>
+    <section class="def-section">
+        <div class="def-section-item">
+            <h3>Filtračná schopnosť</h3>
+            <p>je schopnosť filtra zachytávať častice určitej veľkosti. Na vyjadrenie filtračnej schopnosti sa používa filtračný koeficient βx a účinnosť filtra Ex.</p>
+            <h3>Absorpcia</h3>
+            <p>schopnosť média pohltiť alebo vtiahnuť látku do jej vnútra a udržať ju tam – veľmi dobrým príkladom je neupravený papier.</p>
+            <h3>Adsorpcia</h3>
+            <p>schopnosť média zastaviť alebo pozbierať látku na povrchu – veľmi dobrým príkladom je aktívne uhlie.</p>
+        </div>
+        <div class="def-section-item">
+            <h3>Koeficient beta / beta pomer (ratio)</h3>
+            <p>podľa normy ISO 4572 vyjadruje filtračnú schopnosť ako pomer medzi počtom častíc danej veľkosti vstupujúcich do filtra a počtom častíc danej veľkosti po výstupe z filtra. Výpočet danej účinnosti určí, či sa jedná o absolútnu alebo nominálnu filtráciu. Je to veľmi dôležitý parameter hodnotenia účinnosti filtračného elementu alebo filtračného média.</p>
+            <h4>βx = Nd / Nu</h4>
+            <p>βx - Beta pomer (alebo Beta účinnosť) pre kontaminanty väčšie ako x μm</p>
+            <p>Nd - Počet častíc väčších ako x μm na jednotku objemu na vstupe do filtra</p>
+            <p>Nu - Počet častíc väčších ako x μm na jednotku objemu na výstupe z filtra</p>   
+            <img src="/images/filtracia-oleja/bx.png" alt="bx formula"> 
+            <table>
+                <tr>
+                    <td><strong>βx</strong></td>
+                    <td>1</td>
+                    <td>100</td>
+                    <td>200</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td><strong>Účinnosť</strong></td>
+                    <td>0,0%</td>
+                    <td>99,0%</td>
+                    <td>99,5%</td>
+                    <td>99,9%</td>
+                </tr>
+            </table>
+        </div>
+        <div class="def-section-item">
+            <h3>Účinnosť filtra Ex</h3>
+            <p>pri definovanej veľkosti častíc sa určí nasledovným spôsobom a udáva sa v %:</p>
+            <p>Ex = ( 1 - 1 / βx ) * 100 (%)</p>
+            <h3>Kapacita filtra</h3>
+            <p>objem, ktorý je schopný prijať a súčasne filtrovať pri určenej filtračnej schopnosti a prietoku.</p>
+            <h3>Jadro filtra</h3>
+            <p>vnútorný materiál filtračnej vložky, ktorý slúži ako podporný pilier, na ktorý sa upevňuje filtračné médium.</p>
+            <h3>Delta P (P)</h3>
+            <p>symbol tlakovej straty, čo znamená rozdiel tlaku meraných pred a za filtračným telesom.</p>
+        </div>
+        <div class="def-section-item">
+            <h3>Hustota</h3>
+            <p>hmotnosť zodpovedajúca priepustnosti filtračného materiálu vyjadrená v g/m2.</p>
+            <h3>Filtrát</h3>
+            <p>kvapalina, ktorá vychádza z filtračnej nádoby po vzájomnom strete s filtračným médiom, elementom. </p>
+            <h3>Mikrometer</h3>
+            <p>sa používa ako hlavné porovnávacie kritérium pre stanovenie efektivity filtračného média v absolútnom alebo nominálnom hodnotení.</p>
+        </div>
+    </section>
+</section>

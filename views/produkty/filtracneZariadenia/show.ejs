@@ -1,28 +1,48 @@
 <% layout("layouts/boilerplate") %>
-<div>
-    <h3><%= zariadenie.nazov %></h3>
-    <img src="<%= zariadenie.obrazok %>" alt="obrazok">
-    <table>
-        <tbody>
-            <tr>
-                <td>Objem olejovej nádrže</td>
-                <td><%= zariadenie.objOlejNad %></td>
-            </tr>
-            <tr>
-                <td>El. motor</td>
-                <td><%= zariadenie.elMotor %></td>
-            </tr>
-            <tr>
-                <td>Normálny prietok</td>
-                <td><%= zariadenie.normPriet %></td>
-            </tr>
-            <tr>
-                <td>Maximálny tlak</td>
-                <td><%= zariadenie.maxTlak %></td>
-            </tr>
-        </tbody>
-    </table>
-    <a href="/produkty/filtracne-zariadenia/<%=zariadenie._id%>/edit">uprav filtračné zariadenie</a>
-    <form action="/produkty/filtracne-zariadenia/<%= zariadenie._id %>?_method=DELETE" method="POST">
-    <button>Odstráň filtračné zariadenie</button>
-</div>
+<section class="breadcrumbs">
+    <ul>
+        <a href="/produkty"><li>Produkty</li></a>
+        <li> / </li>
+        <a href="/produkty/filtracne-zariadenia"><li>Filtračné zariadenia</li></a>
+        <li> / </li>
+        <a href=""><li><%= zariadenie.nazov %></li></a>
+    </ul>
+</section>
+
+<section class="container-narrow">
+    <section class="showpage">
+        <img src="<%= zariadenie.obrazok %>" alt="obrazok" width="400">
+        <div class="showpage-description">
+            <h3 class="showpage-title"><%= zariadenie.nazov %></h3>
+            <table class="showpage-table">
+                <tbody>
+                    <tr>
+                        <td class="table-title">Objem olejovej nádrže</td>
+                        <td><%= zariadenie.objOlejNad %></td>
+                    </tr>
+                    <tr>
+                        <td class="table-title">El. motor</td>
+                        <td><%= zariadenie.elMotor %></td>
+                    </tr>
+                    <tr>
+                        <td class="table-title">Normálny prietok</td>
+                        <td><%= zariadenie.normPriet %></td>
+                    </tr>
+                    <tr>
+                        <td class="table-title">Maximálny tlak</td>
+                        <td><%= zariadenie.maxTlak %></td>
+                    </tr>
+                    <tr>
+                        <td class="table-title">Katégória</td>
+                        <td><%= zariadenie.kategoria %></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="item-control">
+                <button><a href="/produkty/filtracne-zariadenia/<%=zariadenie._id%>/edit">Upraviť</a></button>
+                <form action="/produkty/filtracne-zariadenia/<%= zariadenie._id %>?_method=DELETE" method="POST">
+                <button>Odstrániť</button>
+            </div>
+        </div>
+    </section>
+</section>

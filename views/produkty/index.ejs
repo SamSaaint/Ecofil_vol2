@@ -1,11 +1,29 @@
 <% layout("layouts/boilerplate") %>
-<h1>Kategórie produktov</h1>
-
-<ul>
-    <li><a href="produkty/filtracne-telesa">Filtračné telesá</a></li>
-    <li><a href="produkty/filtracne-zariadenia">Filtračné zariadenia</a></li>
-    <li><a href="produkty/filtracne-vlozky">Filtračné vložky</a></li>
-    <li><a href="produkty/magneticka-filtracia">Magnetická filtrácia</a></li>
-    <li><a href="produkty/analyza-oleja">Analyza oleja</a></li>
-    <li><a href="produkty/aquameter">Aquameter</a></li>
-</ul>
+<section class="container-narrow" id="categories-container">
+    <section class="categories">
+        <div class="category-item" onclick="location.href='/produkty/filtracne-telesa'">
+            <h2>Filtračné telesá</h2>
+            <img src="/images/filtration_units_cat.png" alt="filtračné telesá" width="350px">
+        </div>
+        <div class="category-item" onclick="location.href='/produkty/filtracne-zariadenia'">
+            <h2>Filtračné zariadenia</h2>
+            <img src="/images/ecofil_filtration_devices.png" alt="filtračné telesá" width="350px">
+        </div>
+        <div class="category-item" onclick="location.href='/produkty/filtracne-vlozky'">
+            <h2>Filtračné vložky</h2>
+            <img src="/images/ecofil_filter_vlozky.png" alt="filtračné telesá" width="350px">
+        </div>
+        <div class="category-item" onclick="location.href='/produkty/magneticka-filtracia'">
+            <h2>Magnetická filtrácia</h2>
+            <img src="/images/magnetic_filtration_category.png" alt="filtračné telesá" width="350px">
+        </div>
+        <div class="category-item" onclick="location.href='/produkty/analyza-oleja'">
+            <h2>Analýza oleja</h2>
+            <img src="/images/oil_analysis_category.png" alt="filtračné telesá" width="350px">
+        </div>
+        <div class="category-item" onclick="location.href='/produkty/aquameter'">
+            <h2>Aquameter</h2>
+            <img src="/images/aquameter.png" alt="filtračné telesá" width="350px">
+        </div>
+    </section>
+</section>

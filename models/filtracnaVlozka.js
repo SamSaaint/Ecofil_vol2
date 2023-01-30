@@ -11,7 +11,16 @@ const vlozkaSchema = new Schema({
     prietok: Number,
     absorbVody: Number,
     kapFiltr: String,
-    filtrZar: String
+    filtrZar: [
+        {
+            type:Schema.Types.ObjectId,
+            ref:"Zariadenie"
+        }
+    ],
+    kategoria: {
+        type:String,
+        enum:["Rada 101", "Rada 201", "Rada 351", "Rada 401"]
+    }
 });
 
 module.exports = mongoose.model("Vlozka", vlozkaSchema);

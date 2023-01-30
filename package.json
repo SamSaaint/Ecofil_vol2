@@ -7,7 +7,7 @@
     "trial": "nodemon app.js",
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "less": "lessc ./public/stylesheets/style.less ./public/stylesheets/style.css"
+    "less": "less-watch-compiler"
   },
   "author": "Samuel Krescanko",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "ejs-mate": "^4.0.0",
     "express": "^4.18.2",
     "less": "^4.1.3",
+    "less-watch-compiler": "^1.16.3",
     "method-override": "^3.0.0",
     "mongoose": "^6.8.0",
     "path": "^0.12.7"

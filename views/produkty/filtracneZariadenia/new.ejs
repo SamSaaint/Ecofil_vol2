@@ -1,7 +1,7 @@
 <% layout("layouts/boilerplate") %>
-
-<div>
-    <form action="/produkty/filtracne-zariadenia" method="POST">
+<section class="container-narrow">
+    <h2>Pridaj nové filtračné zariadenie</h2>
+    <form class="product-form" action="/produkty/filtracne-zariadenia" method="POST">
         <div>
             <label for="nazov">Názov</label>
             <input type="text" name="filtracneZariadenie[nazov]" id="nazov" required>
@@ -12,22 +12,34 @@
         </div>
         <div>
             <label for="objOlejNad">Objem olejovej nádrže</label>
-            <input type="text" name="filtracneZariadenie[objOlejNad]" id="objOlejNad" required>
+            <input type="text" name="filtracneZariadenie[objOlejNad]" id="objOlejNad">
         </div>
         <div>
             <label for="elMotor">El. Motor</label>
-            <input type="text" name="filtracneZariadenie[elMotor]" id="elMotor" required>
+            <input type="text" name="filtracneZariadenie[elMotor]" id="elMotor">
         </div>
         <div>
             <label for="normPriet">Norm. Prietok</label>
-            <input type="text" name="filtracneZariadenie[normPriet]" id="normPriet" required>
+            <input type="text" name="filtracneZariadenie[normPriet]" id="normPriet">
         </div>
         <div>
             <label for="maxTlak">Max. tlak</label>
-            <input type="text" name="filtracneZariadenie[maxTlak]" id="maxTlak" required>
+            <input type="text" name="filtracneZariadenie[maxTlak]" id="maxTlak">
         </div>
         <div>
-            <button>Pridaj filtračné zariadenie</button>
+            <label for="kategoria">Kategória</label>
+            <select name="filtracneZariadenie[kategoria]" id="kategoria">
+                <option value="">-</option>
+                <option value="Rada SN">Rada SN</option>
+                <option value="Rada ONW">Rada ONW</option>
+                <option value="Transformátorové">Zariadenia na filtráciu transformátorových olejov</option>
+                <option value="Výbušné">Zariadenia na filtráciu do výbušného prostredia v nevýbušnom prevedení</option>
+                <option value="Špeciálne">Špeciálne zariadenia</option>
+            </select>
+        </div>
+        <div>
+            <button class="add-product-button">✓ Pridať</button>
+            <a class="cancel-product-button" href="/produkty/filtracne-zariadenia">X Zrušiť</a>
         </div>
     </form>
-</div>
+</section>

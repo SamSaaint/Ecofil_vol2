@@ -7,7 +7,11 @@ const zariadenieSchema = new Schema({
     objOlejNad: String,
     elMotor: String,
     normPriet: String,
-    maxTlak: String
+    maxTlak: String,
+    kategoria: {
+        type:String,
+        enum:["Rada SN", "Rada ONW", "Transformátorové", "Výbušné", "Špeciálne"]
+    }
 });
 
 module.exports = mongoose.model("Zariadenie", zariadenieSchema);

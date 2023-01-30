@@ -1,0 +1,104 @@
+//magneticka filtracia - index page
+#mg-fi-text {
+    justify-content: flex-start;
+}
+
+#mg-fi-cont {
+    .container-narrow;
+    display:flex;
+    justify-content: space-between;
+    background-color: @grey-light;
+}
+
+.mg-fi-item {
+    flex-basis:600px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    background-color: @grey-medium;
+    padding:2rem;
+    border-radius:2px;
+    transition:0.2s linear;
+    text-align:justify;
+    &:hover{
+        cursor:pointer;
+        background-color: @grey-dark;
+    };
+    h2 {
+        color:@blue-dark;
+    }
+}
+
+// magenticky separator
+#ms-content {
+    display:flex;
+    flex-direction:column;
+    h2 {
+        color:@blue-dark;
+    };
+    ul {
+        margin:0 0 1rem 0;
+    };
+    li {
+        line-height:2rem;
+    };
+    p {
+        margin:0.5rem;
+    }
+}
+
+#ms-pics {
+    display:flex;
+    justify-content: space-evenly;
+}
+
+#ms-table {
+    align-self: center;
+    font-size:0.9rem;
+    background-color:#fff;
+    margin:2rem 0;
+    border:1px solid @grey-dark;
+    th {
+        padding: 1.4rem 1rem;
+        color:@blue-dark;
+        background-color:@grey-light;
+    };
+    td {
+        padding:0.7rem 1rem;
+    }
+}
+
+#ms-table tr:nth-child(2),
+#ms-table tr:nth-child(4),
+#ms-table tr:nth-child(6),
+#ms-table tr:nth-child(9),
+#ms-table tr:nth-child(10),
+#ms-table tr:nth-child(11),
+#ms-table tr:nth-child(15),
+#ms-table tr:nth-child(16),
+#ms-table tr:nth-child(17),
+#ms-table tr:nth-child(21),
+#ms-table tr:nth-child(23),
+#ms-table tr:nth-child(25) {
+    background-color:@grey-light;
+}
+
+#ms-video {
+    background-color:@black-main;
+    padding:1rem 2rem;
+    color:@grey-light;
+    h3 {
+        color:@grey-light;
+        font-weight:300;
+    }
+}
+
+// magneticky filter
+.mf-content {
+    display:flex;
+    flex-direction:column;
+    text-align:justify;
+    h2 {
+        color:@blue-dark
+    }
+}

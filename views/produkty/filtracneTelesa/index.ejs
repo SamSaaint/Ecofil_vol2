@@ -1,62 +1,239 @@
 <% layout("layouts/boilerplate") %>
-<h1>Filtračné telesá</h1>
-<a href="/produkty/filtracne-telesa/new">Pridaj filtračné teleso</a>
+<section class="breadcrumbs">
+    <ul>
+        <a href="/produkty"><li>Produkty</li></a>
+        <li> / </li>
+        <a href=""><li>Filtračné telesá</li></a>
+    </ul>
+</section>
 
-<% for(let teleso of telesa) { %>
-    <div>
-        <h3><a href="/produkty/filtracne-telesa/<%=teleso._id%>"><%= teleso.nazov %></a></h3>
-        <img src="<%= teleso.obrazok %>" alt="obrazok">
-        <table>
-            <tbody>
-                <tr>
-                    <td>Normálny Prietok</td>
-                    <td><%= teleso.normPrietok %></td>
-                </tr>
-                <tr>
-                    <td>Filtračná schopnosť</td>
-                    <td><%= teleso.filtrSchopnost %></td>
-                </tr>
-                <tr>
-                    <td>Max. teplota oleja</td>
-                    <td><%= teleso.maxTepOleja %></td>
-                </tr>
-                <tr>
-                    <td>Max. objem nádrže</td>
-                    <td><%= teleso.maxObjNadrze %></td>
-                </tr>
-                <tr>
-                    <td>Viskozita vstupného oleja</td>
-                    <td><%= teleso.viskVstupnehoOleja %></td>
-                </tr>
-                <tr>
-                    <td>Prevádzkový / skúšobný tlak</td>
-                    <td><%= teleso.prevSkusTlak %></td>
-                </tr>
-                <tr>
-                    <td>Hydr. pripojenie - vstup</td>
-                    <td><%= teleso.hydrPripVstup %></td>
-                </tr>
-                <tr>
-                    <td>Hydr. pripojenie - výstup</td>
-                    <td><%= teleso.hydrPripVystup %></td>
-                </tr>
-                <tr>
-                    <td>Vonkajšie rozmery</td>
-                    <td><%= teleso.vonkRozm %></td>
-                </tr>
-                <tr>
-                    <td>Hmotnosť</td>
-                    <td><%= teleso.hmotnost %></td>
-                </tr>
-                <tr>
-                    <td>Filtračná vložka</td>
-                    <td><%= teleso.filtrVlozka %></td>
-                </tr>
-                <tr>
-                    <td>Materiál</td>
-                    <td><%= teleso.material %></td>
-                </tr>
-            </tbody>
-        </table>
+<section class="uvod">
+    <section class="uvod-text">
+        <h1>Filtračné telesá</h1>
+        <h3>Výhody obtokovej filtrácie:</h3>
+        <p>Na základe následkov kontaminácie oleja na olej samotný a na stroj všeobecne je jasné, že výsledky zodpovedajúceho čistenia, získané inštaláciou obtokového filtračného systému, sú výborné:</p>
+        <ul>
+            <li>Predĺženie intervalu výmeny oleja: V hydraulických aplikáciách sa výmeny oleja stanú skoro nepotrebnými. </li>
+            <li>Predĺženie životnosti plnoprietokového filtra: Väčšina kontaminantov je zachytená obtokovým filtrom, čím sa zabraňuje nasýteniu plnoprietokového filtra.</li>
+            <li>Dôležitá redukcia opotrebenia: Zachytenie časticových kontaminantov zabraňuje "pieskovaciemu" efektu týchto častíc na komponenty stroja.</li>
+            <li>Zabránenie poškodeniu: Zablokovanie dynamických vôli v komponentoch je odstránené odfiltrovaním väčších častíc.</li>
+            <li>Predĺženie životnosti stroja: Redukcia opotrebenia predlžuje životnosť stroja.</li>
+            <li>Redukcia nákladov na opravy: Zlepšením správnej funkcie stroja sa výrazne redukujú náklady na opravy.</li>
+            <li>Zlepšenie pôsobenia na životné prostredie: Preventívna údržba a predĺženie životnosti oleja zabraňuje znečisteniu prírodných zdrojov.</li>
+        </ul>
+    </section>
+    <div  class="uvod-img">
+        <img src="/images/filtration_units_cat.png" alt="Filtračné telesá" height="350px">
     </div>
-<% } %>
+</section>
+
+<section class="operations">
+    <a href="/produkty/filtracne-telesa/new"><img src="/icons/plus-circle-fill.svg" width="40px" alt="pridaj teleso"></a>
+</section>
+
+<section class="content">
+    <h2 class="content-header">Filtračné telesá série T - nízky tlak</h2>
+    <p class="content-sub-header">Filtračné telesá ECOFIL T-série sú vyvinuté pre čistenie mazacieho oleja v spaľovacích motoroch a iných mazacích aplikáciách. Sú vyrábané v troch veľkostiach podľa objemu nádrže, ktorá bude filtrovaná. Všetky filtračné telesá ECOFIL sú ošetrené voči korózii a testované a schválené pre pracovné tlaky do 8 bar. Potrebný redukovaný prietok oleja pre zaistenie mikrofiltrácie (max. 3 l/min pre T 35) sa dosahuje otvorom na strane výstupu filtračného telesa prirodzeným vnútorným odporom vložky filtra. Následkom je ovplyvnenie tlaku oleja. Dve nepriepustné hrany na dne filtračného lôžka zabraňujú, aby sa ani malé množstvo oleja nevyhlo filtrácii. Filtračné telesá sú vybavené oceľovým upevňovacím držiakom pre hladké upevnenie na horizontálne aj vertikálne povrchy.</p>
+    <section class="content-cat">
+        <% for(let teleso of telesa) { %>
+            <% if(teleso.kategoria == "Séria T"){ %>
+            <section onclick="location.href='/produkty/filtracne-telesa/<%=teleso._id%>'" class="content-item">
+                <div class="content-item-img">
+                    <img src="<%= teleso.obrazok %>" alt="obrazok" width="200px">
+                </div>
+                <div class="content-item-description">
+                    <h3><%= teleso.nazov %></h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="table-title">Normálny Prietok</td>
+                                <td><%= teleso.normPrietok %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Filtračná schopnosť</td>
+                                <td><%= teleso.filtrSchopnost %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Max. teplota oleja</td>
+                                <td><%= teleso.maxTepOleja %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Max. objem nádrže</td>
+                                <td><%= teleso.maxObjNadrze %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Viskozita vstupného oleja</td>
+                                <td><%= teleso.viskVstupnehoOleja %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Prevádzkový / skúšobný tlak</td>
+                                <td><%= teleso.prevSkusTlak %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Hydr. pripojenie - vstup</td>
+                                <td><%= teleso.hydrPripVstup %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Hydr. pripojenie - výstup</td>
+                                <td><%= teleso.hydrPripVystup %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Vonkajšie rozmery</td>
+                                <td><%= teleso.vonkRozm %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Hmotnosť</td>
+                                <td><%= teleso.hmotnost %></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Filtračná vložka</td>
+                                <td><a href="/produkty/filtracne-vlozky/#<%= teleso.filtrVlozka.typ.slice(-3) %>"> <%= teleso.filtrVlozka.typ %> </a></td>
+                            </tr>
+                            <tr>
+                                <td class="table-title">Materiál</td>
+                                <td><%= teleso.material %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <% } %>
+        <% } %>                                     
+    </section>
+    <h2 class="content-header">Filtračné telesá série H - vysoký tlak</h2>
+        <p class="content-sub-header">Filtračné teleso ECOFIL je testované a schválené pre pracovné tlaky do 315 bar a sú v súlade s predpismi EÚ. Systémy série H nepotrebujú čerpadlo ani motor. Sú inštalované do obtoku hlavného hydraulického obvodu s prevádzkovým tlakom medzi 8 a 350 bar. Všetky telesá série H sú vybavené upevňovacou konzolou pre pripevnenie na vertikálnu alebo horizontálnu plochu. Aby sa získali podmienky pre mikroskopickú hĺbkovú filtráciu (konštantný nízky tlak a konštantný prietok), je filtračné teleso vybavené ventilom regulácie prietoku. Zabudovaný poistný ventil zabraňuje nárastu tlaku. <br>
+        Poistný ventil sa otvorí pri tlaku 6 bar a olej tak preteká priamo do vratnej vetvy bez prechodu cez filtračnú vložku. Tlakomer indikuje potrebu výmeny vložky ako funkciu proti tlaku, spôsobeného progresívnym nasýtením filtračnej vložky. Tlakomer je ďalej nevyhnutý na zoradenie  správnej polohy uzatváracieho ventilu, ktorý je umiestnený na vstupe do telesa filtra za účelom nastavenia max. tlaku vo filtračnom telese.</p>
+        <section class="content-cat">
+            <% for(let teleso of telesa) { %>
+                <% if(teleso.kategoria == "Séria H"){ %>
+                <section onclick="location.href='/produkty/filtracne-telesa/<%=teleso._id%>'" class="content-item">
+                    <div class="content-item-img">
+                        <img src="<%= teleso.obrazok %>" alt="obrazok" width="200px">
+                    </div>
+                    <div class="content-item-description">
+                        <h3><%= teleso.nazov %></h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="table-title">Normálny Prietok</td>
+                                    <td><%= teleso.normPrietok %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title">Filtračná schopnosť</td>
+                                    <td><%= teleso.filtrSchopnost %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title">Max. teplota oleja</td>
+                                    <td><%= teleso.maxTepOleja %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title">Max. objem nádrže</td>
+                                    <td><%= teleso.maxObjNadrze %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title">Viskozita vstupného oleja</td>
+                                    <td><%= teleso.viskVstupnehoOleja %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title">Prevádzkový / skúšobný tlak</td>
+                                    <td><%= teleso.prevSkusTlak %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title">Hydr. pripojenie - vstup</td>
+                                    <td><%= teleso.hydrPripVstup %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title">Hydr. pripojenie - výstup</td>
+                                    <td><%= teleso.hydrPripVystup %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title">Vonkajšie rozmery</td>
+                                    <td><%= teleso.vonkRozm %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title">Hmotnosť</td>
+                                    <td><%= teleso.hmotnost %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title">Filtračná vložka</td>
+                                    <td><a href="/produkty/filtracne-vlozky/#<%= teleso.filtrVlozka.typ.slice(-3) %>"> <%= teleso.filtrVlozka.typ %> </a></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title">Materiál</td>
+                                    <td><%= teleso.material %></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <% } %>
+            <% } %>                                     
+        </section>
+        <h2 class="content-header">Filtračné telesá - ostatné</h2>
+            <section class="content-cat">
+                <% for(let teleso of telesa) { %>
+                    <% if(teleso.kategoria == "Ostatné"){ %>
+                    <section onclick="location.href='/produkty/filtracne-telesa/<%=teleso._id%>'" class="content-item">
+                        <div class="content-item-img">
+                            <img src="<%= teleso.obrazok %>" alt="obrazok" width="200px">
+                        </div>
+                        <div class="content-item-description">
+                            <h3><%= teleso.nazov %></h3>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="table-title">Normálny Prietok</td>
+                                        <td><%= teleso.normPrietok %></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-title">Filtračná schopnosť</td>
+                                        <td><%= teleso.filtrSchopnost %></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-title">Max. teplota oleja</td>
+                                        <td><%= teleso.maxTepOleja %></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-title">Max. objem nádrže</td>
+                                        <td><%= teleso.maxObjNadrze %></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-title">Viskozita vstupného oleja</td>
+                                        <td><%= teleso.viskVstupnehoOleja %></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-title">Prevádzkový / skúšobný tlak</td>
+                                        <td><%= teleso.prevSkusTlak %></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-title">Hydr. pripojenie - vstup</td>
+                                        <td><%= teleso.hydrPripVstup %></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-title">Hydr. pripojenie - výstup</td>
+                                        <td><%= teleso.hydrPripVystup %></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-title">Vonkajšie rozmery</td>
+                                        <td><%= teleso.vonkRozm %></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-title">Hmotnosť</td>
+                                        <td><%= teleso.hmotnost %></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-title">Filtračná vložka</td>
+                                        <td><a href="/produkty/filtracne-vlozky/#<%= teleso.filtrVlozka.typ.slice(-3) %>"> <%= teleso.filtrVlozka.typ %> </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="table-title">Materiál</td>
+                                        <td><%= teleso.material %></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <% } %>
+                <% } %>                                     
+            </section>
+</section>

@@ -1,48 +1,68 @@
 <% layout("layouts/boilerplate") %>
-<div>
-    <form action="/produkty/filtracne-vlozky" method="POST">
+<section class="container-narrow">
+    <h2>Pridaj novú filtračnú vložku</h2>
+    <form id="product-form-vlozky" action="/produkty/filtracne-vlozky" method="POST">
+        <div id="product-form-vlozky-left">
+            <div>
+                <label for="typ">Typ</label>
+                <input type="text" name="filtracnaVlozka[typ]" id="typ" required>
+            </div>
+            <div>
+                <label for="obrazok">Fotka</label>
+                <input type="text" name="filtracnaVlozka[obrazok]" id="obrazok" required>
+            </div>
+            <div>
+                <label for="material">Materiál</label>
+                <input type="text" name="filtracnaVlozka[material]" id="material">
+            </div>
+            <div>
+                <label for="priemer">Priemer (mm)</label>
+                <input type="number" name="filtracnaVlozka[priemer]" id="priemer" step=".01">
+            </div>
+            <div>
+                <label for="vyska">Výška (mm)</label>
+                <input type="number" name="filtracnaVlozka[vyska]" id="vyska" step=".01">
+            </div>
+            <div>
+                <label for="hmotnost">Hmotnosť (g)</label>
+                <input type="number" name="filtracnaVlozka[hmotnost]" id="hmotnost" step=".01">
+            </div>
+            <div>
+                <label for="prietok">Prietok (l/min)</label>
+                <input type="number" name="filtracnaVlozka[prietok]" id="prietok" step=".01">
+            </div>
+            <div>
+                <label for="absorbVody">Absorbcia vody (l)</label>
+                <input type="number" name="filtracnaVlozka[absorbVody]" id="absorbVody" step=".01">
+            </div>
+            <div>
+                <label for="kapFiltr">Kapacita filtrácie (NAS)</label>
+                <input type="text" name="filtracnaVlozka[kapFiltr]" id="kapFiltr">
+            </div>
+            <div>
+                <label for="kategoria">Kategória</label>
+                <select name="filtracnaVlozka[kategoria]" id="kategoria">
+                    <option value="">-</option>
+                    <option value="Rada 101">Rada 101</option>
+                    <option value="Rada 201">Rada 201</option>
+                    <option value="Rada 351">Rada 351</option>
+                    <option value="Rada 401">Rada 401</option>
+                </select>
+            </div>
+        </div>  
         <div>
-            <label for="typ">Typ</label>
-            <input type="text" name="filtracnaVlozka[typ]" id="typ" required>
-        </div>
-        <div>
-            <label for="obrazok">Fotka</label>
-            <input type="text" name="filtracnaVlozka[obrazok]" id="obrazok" required>
-        </div>
-        <div>
-            <label for="material">Materiál</label>
-            <input type="text" name="filtracnaVlozka[material]" id="material" required>
-        </div>
-        <div>
-            <label for="priemer">Priemer (mm)</label>
-            <input type="number" name="filtracnaVlozka[priemer]" id="priemer" step=".01" required>
-        </div>
-        <div>
-            <label for="vyska">Výška (mm)</label>
-            <input type="number" name="filtracnaVlozka[vyska]" id="vyska" step=".01" required>
-        </div>
-        <div>
-            <label for="hmotnost">Hmotnosť (g)</label>
-            <input type="number" name="filtracnaVlozka[hmotnost]" id="hmotnost" step=".01" required>
-        </div>
-        <div>
-            <label for="prietok">Prietok (l/min)</label>
-            <input type="number" name="filtracnaVlozka[prietok]" id="prietok" step=".01" required>
-        </div>
-        <div>
-            <label for="absorbVody">Absorbcia vody (l)</label>
-            <input type="number" name="filtracnaVlozka[absorbVody]" id="absorbVody" step=".01" required>
-        </div>
-        <div>
-            <label for="kapFiltr">Kapacita filtrácie (NAS)</label>
-            <input type="text" name="filtracnaVlozka[kapFiltr]" id="kapFiltr" required>
-        </div>
-        <div>
-            <label for="filtrZar">Filtračné zariadenie</label>
-            <input type="text" name="filtracnaVlozka[filtrZar]" id="filtrZar" required>
-        </div>
-        <div>
-            <button>Pridaj filtračnú vložku</button>
+            <label for="filtrZar">Filtračné zariadenia</label>
+            <fieldset id="filtrZar">
+                <ul>
+                <% for(let zariadenie of zariadenia) { %>
+                    <li><input type="checkbox" name="filtracnaVlozka[filtrZar]" value="<%= zariadenie._id %>"><%= zariadenie.nazov %></li>
+                <% } %>
+                </ul>
+            </fieldset>
+            <div>
+                <button class="add-product-button">✓ Pridať</button>
+                <a class="cancel-product-button" href="/produkty/filtracne-vlozky">X Zrušiť</a>
+            </div>
         </div>
     </form>
-</div>
+</section>

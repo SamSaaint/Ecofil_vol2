@@ -1,5 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const zivTables = require("../../public/tdata/tdata");
+const particles = require("../../public/particles-grid/particles");
+
 
 router.get("/",(req,res)=>{
     res.render("../views/filtracia/index")
@@ -10,7 +13,7 @@ router.get("/by-pass-filtracia",(req,res)=>{
 });
 
 router.get("/predlzenie-zivotnosti-oleja",(req,res)=>{
-    res.render("../views/filtracia/predlzenie-zivotnosti-oleja")
+    res.render("../views/filtracia/predlzenie-zivotnosti-oleja", { zivTables, particles })
 });
 
 router.get("/kontaminacia-oleja",(req,res)=>{

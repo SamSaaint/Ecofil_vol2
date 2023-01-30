@@ -1,52 +1,288 @@
 <% layout("layouts/boilerplate") %>
-<h1>Filtračné vložky</h1>
-<a href="/produkty/filtracne-vlozky/new">Pridaj filtračnú vložku</a>
+<section class="breadcrumbs">
+    <ul>
+        <a href="/produkty"><li>Produkty</li></a>
+        <li> / </li>
+        <a href="/"><li>Filtračné Vložky</li></a>
+    </ul>
+</section>
 
-<% for(let vlozka of vlozky) { %>
-    <div>
-        <img src="<%= vlozka.obrazok %>" alt="obrazok">
-        <table>
-            <tbody>
-                <tr>
-                    <td>Typ</td>
-                    <td><%= vlozka.typ %></a></td>
-                </tr>
-                <tr>
-                    <td>Materiál</td>
-                    <td><%= vlozka.material %></td>
-                </tr>
-                <tr>
-                    <td>Priemer (mm)</td>
-                    <td><%= vlozka.priemer %></td>
-                </tr>
-                <tr>
-                    <td>Výška (mm)</td>
-                    <td><%= vlozka.vyska %></td>
-                </tr>
-                <tr>
-                    <td>Hmotnosť (g)</td>
-                    <td><%= vlozka.hmotnost %></td>
-                </tr>
-                <tr>
-                    <td>Prietok (l/min)</td>
-                    <td><%= vlozka.prietok %></td>
-                </tr>
-                <tr>
-                    <td>Absorbcia vody (l)</td>
-                    <td><%= vlozka.absorbVody %></td>
-                </tr>
-                <tr>
-                    <td>Kapacita filtra (NAS)</td>
-                    <td><%= vlozka.kapFiltr %></td>
-                </tr>
-                <tr>
-                    <td>Filtračné zariadenie</td>
-                    <td><%= vlozka.filtrZar %></td>
-                </tr>
-            </tbody>
-        </table>
-        <button><a href="/produkty/filtracne-vlozky/<%=vlozka._id%>/edit">uprav filtračnú vložku</a></button>
-        <form action="/produkty/filtracne-vlozky/<%= vlozka._id %>?_method=DELETE" method="POST">
-        <button>Odstrán filtračnú vložku</button>
+<section class="uvod">
+    <section class="uvod-text">
+        <h1>Filtračné vložky</h1>
+        <p>Najdôležitejším prvkom každého filtračného systému je filtračná vložka. Vložka je vyrobená z celulózového vlákna spevneného za mokra a navinutého okolo dutinky. Napnutie navinutej celulózy, ktoré zaisťuje presné zachytávanie kontaminantov, sa prispôsobuje pre jednotlivé typy filtračných vložiek. Spodná časť filtračnej vložky je zalisovaná do spevňujúceho papierového kruhu tak, aby mala vyššiu hustotu ako horná časť. Táto technika spôsobuje postupné zachytávanie kontaminantov, pričom väčšie sú zachytávané v hornej časti a menšie v dolnej. To zaisťuje túto zvyšujúcu sa presnosť filtrácie a zabraňuje deformácii vložky.</p>
+        <p>
+        Tkanina, ktorá je pripevnená na spodnej časti filtračnej vložky zabraňuje tomu, aby zachytené nečistoty znovu unikli pri kolísaní tlaku. Pre jednoduchšie odstránenie vložky z filtra obsahuje vložka pásky. Vložka typu WG je použiteľná pre systémy, ktorých obsah je aj voda-glykol. Táto vložka neabsorbuje vodu a filtračná schopnosť je NAS 6 (5 µm). Filtračná vložka rady T má filtračnú schopnosť 3-5µm, vložka rady H 3µm a vložka rady HH má filtračnú schopnosť 1µm.
+        </p>
+        <p>
+        Výsledkom tejto špeciálnej, vyvinutej konštrukcie vložky je vysoko presná a účinná filtrácia, ktorá absorbuje veľmi veľké množstvo kontaminantov ako sú kovové častice, uhlík, prach a voda bez poškodenia, zmeny alebo odstránenia všeobecných vlastností oleja a jeho aditív. Výsledkom filtrácie ECOFIL je, že olej ostáva čistý a bez poškodenia.
+        </p>
+    </section>
+    <div  class="uvod-img">
+        <img src="/images/ecofil_filter_vlozky.png" alt="Filtračné vložky" height="350px">
     </div>
-<% } %>
+</section>
+
+<section class="operations">
+    <a href="/produkty/filtracne-vlozky/new"><img src="/icons/plus-circle-fill.svg" width="40px" alt="pridaj vložku"></a>
+    </section>
+
+<section class="content" id="101">
+    <h2 class="content-header">Filtračné vložky rady 101</h2>
+        <section class="vlozka-items">
+            <% for(let vlozka of vlozky) { %>
+                <% if(vlozka.kategoria == "Rada 101"){ %>
+                <section class="vlozka-item">
+                    <div>
+                        <h3><%= vlozka.typ %></h3>
+                        <img src="<%= vlozka.obrazok %>" alt="obrazok" width="100px">
+                    </div>
+                    <div class="vlozka-item-description">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="table-title-vlozka">Materiál</td>
+                                    <td><%= vlozka.material %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Priemer (mm)</td>
+                                    <td><%= vlozka.priemer %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Výška (mm)</td>
+                                    <td><%= vlozka.vyska %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Hmotnosť (g)</td>
+                                    <td><%= vlozka.hmotnost %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Prietok (l/min)</td>
+                                    <td><%= vlozka.prietok %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Absorbcia vody (l)</td>
+                                    <td><%= vlozka.absorbVody %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Kapacita filtra (NAS)</td>
+                                    <td><%= vlozka.kapFiltr %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Filtračné zariadenie</td>
+                                    <td>
+                                        <ul>
+                                        <% for(let zariadenie of vlozka.filtrZar) {%>
+                                            <li><a href="/produkty/filtracne-zariadenia/<%=zariadenie._id%>"> <%= zariadenie.nazov %> </a></li>
+                                        <% } %>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                <div class="item-control">
+                    <button><a href="/produkty/filtracne-vlozky/<%=vlozka._id%>/edit">Upraviť</a></button>
+                    <form action="/produkty/filtracne-vlozky/<%= vlozka._id %>?_method=DELETE" method="POST">
+                    <button>Odstrániť</button>
+                </div>
+                </section>
+                <% } %>
+            <% } %>
+    </section>
+</section>
+
+<section class="content" id="201">
+    <h2 class="content-header">Filtračné vložky rady 201</h2>
+        <section class="vlozka-items">
+            <% for(let vlozka of vlozky) { %>
+                <% if(vlozka.kategoria == "Rada 201"){ %>
+                <section class="vlozka-item">
+                    <div>
+                        <h3><%= vlozka.typ %></h3>
+                        <img src="<%= vlozka.obrazok %>" alt="obrazok" width="100px">
+                    </div>
+                    <div class="vlozka-item-description">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="table-title-vlozka">Materiál</td>
+                                    <td><%= vlozka.material %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Priemer (mm)</td>
+                                    <td><%= vlozka.priemer %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Výška (mm)</td>
+                                    <td><%= vlozka.vyska %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Hmotnosť (g)</td>
+                                    <td><%= vlozka.hmotnost %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Prietok (l/min)</td>
+                                    <td><%= vlozka.prietok %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Absorbcia vody (l)</td>
+                                    <td><%= vlozka.absorbVody %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Kapacita filtra (NAS)</td>
+                                    <td><%= vlozka.kapFiltr %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Filtračné zariadenie</td>
+                                    <td>
+                                        <ul>
+                                        <% for(let zariadenie of vlozka.filtrZar) {%>
+                                            <li><a href="/produkty/filtracne-zariadenia/<%=zariadenie._id%>"> <%= zariadenie.nazov %> </a></li>
+                                        <% } %>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                <div class="item-control">
+                    <button><a href="/produkty/filtracne-vlozky/<%=vlozka._id%>/edit">Upraviť</a></button>
+                    <form action="/produkty/filtracne-vlozky/<%= vlozka._id %>?_method=DELETE" method="POST">
+                    <button>Odstrániť</button>
+                </div>
+                </section>
+                <% } %>
+            <% } %>
+    </section>
+</section>
+
+<section class="content" id="351">
+    <h2 class="content-header">Filtračné vložky rady 351</h2>
+        <section class="vlozka-items">
+            <% for(let vlozka of vlozky) { %>
+                <% if(vlozka.kategoria == "Rada 351"){ %>
+                <section class="vlozka-item">
+                    <div>
+                        <h3><%= vlozka.typ %></h3>
+                        <img src="<%= vlozka.obrazok %>" alt="obrazok" width="100px">
+                    </div>
+                    <div class="vlozka-item-description">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="table-title-vlozka">Materiál</td>
+                                    <td><%= vlozka.material %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Priemer (mm)</td>
+                                    <td><%= vlozka.priemer %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Výška (mm)</td>
+                                    <td><%= vlozka.vyska %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Hmotnosť (g)</td>
+                                    <td><%= vlozka.hmotnost %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Prietok (l/min)</td>
+                                    <td><%= vlozka.prietok %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Absorbcia vody (l)</td>
+                                    <td><%= vlozka.absorbVody %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Kapacita filtra (NAS)</td>
+                                    <td><%= vlozka.kapFiltr %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Filtračné zariadenie</td>
+                                    <td>
+                                        <ul>
+                                        <% for(let zariadenie of vlozka.filtrZar) {%>
+                                            <li><a href="/produkty/filtracne-zariadenia/<%=zariadenie._id%>"> <%= zariadenie.nazov %> </a></li>
+                                        <% } %>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                <div class="item-control">
+                    <button><a href="/produkty/filtracne-vlozky/<%=vlozka._id%>/edit">Upraviť</a></button>
+                    <form action="/produkty/filtracne-vlozky/<%= vlozka._id %>?_method=DELETE" method="POST">
+                    <button>Odstrániť</button>
+                </div>
+                </section>
+                <% } %>
+            <% } %>
+    </section>
+</section>
+
+<section class="content" id="401">
+    <h2 class="content-header">Filtračné vložky rady 401</h2>
+        <section class="vlozka-items">
+            <% for(let vlozka of vlozky) { %>
+                <% if(vlozka.kategoria == "Rada 401"){ %>
+                <section class="vlozka-item">
+                    <div>
+                        <h3><%= vlozka.typ %></h3>
+                        <img src="<%= vlozka.obrazok %>" alt="obrazok" width="100px">
+                    </div>
+                    <div class="vlozka-item-description">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="table-title-vlozka">Materiál</td>
+                                    <td><%= vlozka.material %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Priemer (mm)</td>
+                                    <td><%= vlozka.priemer %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Výška (mm)</td>
+                                    <td><%= vlozka.vyska %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Hmotnosť (g)</td>
+                                    <td><%= vlozka.hmotnost %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Prietok (l/min)</td>
+                                    <td><%= vlozka.prietok %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Absorbcia vody (l)</td>
+                                    <td><%= vlozka.absorbVody %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Kapacita filtra (NAS)</td>
+                                    <td><%= vlozka.kapFiltr %></td>
+                                </tr>
+                                <tr>
+                                    <td class="table-title-vlozka">Filtračné zariadenie</td>
+                                    <td>
+                                        <ul>
+                                        <% for(let zariadenie of vlozka.filtrZar) {%>
+                                            <li><a href="/produkty/filtracne-zariadenia/<%=zariadenie._id%>"> <%= zariadenie.nazov %> </a></li>
+                                        <% } %>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                <div class="item-control">
+                    <button><a href="/produkty/filtracne-vlozky/<%=vlozka._id%>/edit">Upraviť</a></button>
+                    <form action="/produkty/filtracne-vlozky/<%= vlozka._id %>?_method=DELETE" method="POST">
+                    <button>Odstrániť</button>
+                </div>
+                </section>
+                <% } %>
+            <% } %>
+    </section>
+</section>

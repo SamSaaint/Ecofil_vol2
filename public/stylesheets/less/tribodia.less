@@ -1,0 +1,23 @@
+.trib-cont-title {
+    font-weight:500 !important;
+}
+
+#trib-pics-row {
+    display:flex;
+    gap:1.7rem;
+    background-color: @grey-medium;
+    box-sizing: border-box;
+    margin:2rem 0;
+}
+
+.trib-pic {
+    flex-basis:200px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    &:hover {
+        cursor:pointer;
+        opacity:0.8;
+    };
+    img {
+        object-fit:cover;
+    }
+}

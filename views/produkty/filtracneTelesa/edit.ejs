@@ -1,6 +1,7 @@
 <% layout("layouts/boilerplate") %>
-<div>
-    <form action="/produkty/filtracne-telesa/<%=teleso._id%>?_method=PUT" method="POST">
+<div class="container-narrow">
+    <h2>Úprava filtračného telesa</h2>
+    <form class="product-form" action="/produkty/filtracne-telesa/<%=teleso._id%>?_method=PUT" method="POST">
         <div>
             <label for="nazov">Názov</label>
             <input type="text" name="filtracneTeleso[nazov]" value="<%= teleso.nazov %>" id="nazov" required>
@@ -50,15 +51,21 @@
             <input type="number" name="filtracneTeleso[hmotnost]" value="<%= teleso.hmotnost %>" id="hmotnost" step=".01" required>
         </div>
         <div>
-            <label for="filtrVlozka">Filtračná Vlozka</label>
-            <input type="text" name="filtracneTeleso[filtrVlozka]" value="<%= teleso.filtrVlozka %>" id="filtrVlozka" required>
+            <label for="vlozka">Filtračná vložka</label>
+            <select name="filtracneTeleso[filtrVlozka]" id="vlozka">
+                <option>-</option>
+                <% for(let vlozka of vlozky) { %>
+                <option selected value="<%=vlozka._id%>"><%= vlozka.typ %></option>
+                <% } %>
+            </select>
         </div>
         <div>
             <label for="material">Materiál</label>
             <input type="text" name="filtracneTeleso[material]" value="<%= teleso.material %>" id="material" required>
         </div>
         <div>
-            <button>Ulož úpravy</button>
+            <button class="add-product-button">✓ Uložiť</button>
+            <a class="cancel-product-button" href="/produkty/filtracne-telesa">X Zrušiť</a>
         </div>
     </form>
 </div>

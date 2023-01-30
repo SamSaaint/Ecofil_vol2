@@ -1,0 +1,271 @@
+@import "variables-mixins";
+@import "navbar";
+@import "footer";
+@import "homepage";
+@import "product-cat";
+@import "vlozky";
+@import "aquameter";
+@import "analyza-oleja";
+@import "mag-filtr";
+@import "tribodia";
+@import "filtracia-index";
+@import "filtracia-predl-ziv";
+@import "uses";
+
+body {
+    margin:0;
+    overflow-x:hidden;
+    font-family: 'Ubuntu', sans-serif;
+    color:@black-main;
+}
+
+a {
+    text-decoration: none;
+    color:@orange-dark;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight:400;
+    margin:1.5rem 0;
+}
+
+h2 {
+    font-size:1.8rem;
+    font-weight: 400;
+    margin: 0.9rem 0;
+}
+
+p {
+    line-height: 1.5rem;
+}
+
+iframe {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+main {
+    z-index:1;
+    transform:translateY(@navbar-height);
+}
+
+.parallax {
+    width:100%;
+    min-height: 300px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:#fff;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    p {
+        width:75%;
+        font-size:1.3rem;
+        line-height:2.5rem;
+        text-align:justify;
+        text-shadow: 1px 1px 2px #000;
+        font-weight:100;
+        z-index:2;
+    }
+}
+
+.parallax-dim {
+    position:absolute;
+    height:100%;
+    width:100%;
+    background-color:rgba(10,10,10,0.5)
+}
+
+// generic product section (zariadenia, telesa)
+.uvod {
+    .container-narrow;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+    background-color:@blue-dark;
+    background:@blue-gradient;
+    color:@grey-light;
+}
+
+.uvod-text {
+    font-size:@p-small;
+    text-align:justify;
+    h3 {
+        color:@orange-dark;
+        font-weight:500;
+    };
+    li {
+        margin:0.7rem 0;
+        line-height:1.3rem;
+    };
+}
+
+.uvod-img {
+    display:flex;
+    align-items:center;
+}
+
+.operations {
+    background:@grey-light;
+    padding: 1rem 3rem;
+    border-bottom:2px solid @grey-dark;
+    display:flex;
+    align-items:center;
+}
+
+.content {
+    .container-narrow;
+    background:@grey-light;
+    display:flex;
+    flex-direction:column;
+}
+
+.content-header {
+    display:inline;
+    padding:1rem;
+    background:@grey-dark;
+    border-radius:10px;
+}
+
+.content-sub-header {
+    padding:0 1rem 1rem;
+    margin:0;
+    text-align:justify;
+}
+
+.content-cat {
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+
+.content-item {
+    background:@grey-medium;
+    display:flex;
+    justify-content:space-evenly;
+    flex-basis:550px;
+    padding:2rem;
+    margin:1rem;
+    border-radius:2px;
+    &:hover {
+        cursor:pointer;
+        transform:translateY(-3px);
+        transition:0.2s linear;
+        background-color:@grey-dark;
+    }
+}
+
+.content-item-img {
+    display:flex;
+    align-items:center;
+}
+
+.content-item-description {
+    margin-left:1rem;
+    h3 {
+        color:@blue-dark;
+    }
+    table {
+        font-size:0.9rem;
+    }
+}
+
+.table-title {
+    font-weight: 600;
+    text-align:right;
+}
+
+// generic product show page (zariadenia, telesa) + item control
+.item-control {
+    display:flex;
+    justify-content: flex-end;
+    button {
+        padding:10px 15px;
+        &:hover {
+            cursor:pointer;
+            color:red;
+        }
+    };
+    a {
+        color:#000;
+    }
+}
+
+.showpage-title {
+    font-size:2rem;
+}
+
+.showpage-table {
+    margin-bottom:1rem;
+}
+
+// new/edit forms
+.product-form {
+    display:flex;
+    flex-direction:column;
+    align-items: flex-end;
+    background-color:@grey-medium;
+    width:430px;
+    padding:2rem;
+    border-radius:5px;
+    input {
+        margin-bottom:0.3rem;
+    }
+}
+
+#filtrZar {
+    background-color: #fff;
+    border:none;
+    margin-top:0.3rem;
+}
+
+#product-form-vlozky {
+    display:flex;
+    background-color:@grey-medium;
+    padding:2rem;
+    border-radius:5px;
+    width:600px;
+    ul {
+        list-style: none;
+        padding:0;  
+    };
+    input {
+        margin-bottom:0.3rem;
+    }
+}
+
+#product-form-vlozky-left {
+    display:flex;
+    flex-direction:column;
+    align-items: flex-end;
+    margin-right:1rem;
+}
+
+.add-product-button {
+    padding:0.2rem 1rem;
+    border-radius:5px;
+    font-size:0.7rem;
+    background-color: @blue-dark;
+    color:#fff; 
+    font-weight: 500;
+    margin-top:0.5rem;
+    border:none;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.cancel-product-button {
+    width:68px;
+    height:23px;
+    background-color:@black-main;
+    font-size:0.7rem;
+    padding: 0.22rem 1rem;
+    border-radius:5px;
+    font-weight: 500;
+    margin-top:0.5rem;
+    color:#fff;
+}

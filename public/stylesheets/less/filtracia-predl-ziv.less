@@ -1,0 +1,89 @@
+//tables section
+#ziv-upper-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ziv-tab {
+    background-color:#f6f6f6;
+    border-collapse: collapse;    
+    td {
+        min-width:80px; 
+        text-align:center;
+        font-size:0.8rem;
+        padding:0.3rem 0;
+    };
+}
+
+.ziv-tab-bl {
+    background-color:rgba(169, 177, 204, 0.36);
+    font-weight:500;
+}
+
+.ziv-tab-org {
+    background-color:rgba(255,192,0,0.2);
+    font-weight:500;
+}
+
+.ziv-tab {
+    display:none;
+}
+
+.ziv-tab tr:nth-child(n+3){
+    &:hover {
+        cursor:pointer;
+        background:rgba(204, 204, 204, 0.5);
+    }
+}
+
+.table-visible {
+    display:block;
+}
+
+.ziv-tab-control {
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.ziv-tab-button {
+    padding: 0.5rem 0.75rem;
+    margin:0.4rem;
+    margin-left:0;
+    border:none;
+    background:@grey-medium;    
+    font-size:0.8rem;
+    &:hover {
+        cursor:pointer;
+    }
+}
+
+#vo-table {
+    td {
+        min-width:50px !important;
+    }
+    .td-wide {
+        min-width:170px !important;
+    }
+}
+
+#vo-table thead {
+    .ziv-tab-bl;
+}
+
+// particle pics section
+#ziv-pics-container {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+    margin-top:2rem;
+}
+
+.ziv-pic figcaption {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+        margin:0;
+    }
+}

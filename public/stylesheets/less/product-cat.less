@@ -1,0 +1,32 @@
+.categories-container {
+    background-color:@grey-medium;
+}
+
+.categories {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.category-item {
+    flex-basis:1;
+    margin:1rem;
+    padding:1rem;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    background:@blue-gradient;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    justify-content: space-around;
+    border-radius:5px;
+    &:hover {
+        transform:translateY(-5px);
+        transition:0.2s linear;
+        cursor: pointer;
+        opacity:0.95;
+    };
+    h2 {
+        color:@grey-light;
+        margin-bottom:1.5rem;
+    }
+}

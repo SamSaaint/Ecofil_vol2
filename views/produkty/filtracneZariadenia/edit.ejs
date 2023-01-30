@@ -1,7 +1,7 @@
 <% layout("layouts/boilerplate") %>
-
-<div>
-    <form action="/produkty/filtracne-zariadenia/<%=zariadenie._id%>?_method=PUT" method="POST">
+<div class="container-narrow">
+    <h2>Úprava filtračného zariadenia</h2>
+    <form class="product-form" action="/produkty/filtracne-zariadenia/<%=zariadenie._id%>?_method=PUT" method="POST">
         <div>
             <label for="nazov">Názov</label>
             <input type="text" name="filtracneZariadenie[nazov]" value="<%= zariadenie.nazov %>" id="nazov" required>
@@ -27,7 +27,8 @@
             <input type="text" name="filtracneZariadenie[maxTlak]" value="<%= zariadenie.maxTlak %>" id="maxTlak" required>
         </div>
         <div>
-            <button>Ulož úpravy</button>
+            <button class="add-product-button">✓ Uložiť</button>
+            <a class="cancel-product-button" href="/produkty/filtracne-zariadenia">X Zrušiť</a>
         </div>
     </form>
 </div>
