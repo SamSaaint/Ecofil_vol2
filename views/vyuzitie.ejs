@@ -7,7 +7,7 @@
 
 <section id="uses-body">
     <div class="uses-item">
-        <img width="330px" src="/images/uses/engines.png" alt="Automotive">
+        <img width="380px" src="/images/uses/engines.png" alt="Automotive">
         <div class="uses-text">
             <h2>Automotive</h2>
             <ul>
@@ -31,7 +31,7 @@
     </div>
 
     <div class="uses-item">
-        <img width="330px" src="/images/uses/systems.png" alt="Systémy">
+        <img width="380px" src="/images/uses/systems.png" alt="Systémy">
         <div class="uses-text">
             <h2>Systémy</h2>
             <ul>
@@ -59,7 +59,7 @@
     </div>
 
     <div class="uses-item">
-        <img width="330px" src="/images/uses/industry.png" alt="Odvetvia">
+        <img width="380px" src="/images/uses/industry.png" alt="Odvetvia">
         <div class="uses-text">
             <h2>Odvetvia</h2>
             <ul>
@@ -89,5 +89,15 @@
 </section>
 
 <section class="image-gallery">
-    
+    <div id="outside" class="outside">
+        <div id="list" class="gallery-list">
+            <div class="album-strip">
+                <% for(i=1;i<=46;i++){ %>
+                <div class="album">
+                    <img src="/images/uses/image-gallery/<%=i%>.jpg">
+                </div>
+                <% }%>
+            </div>
+        </div>
+    </div>
 </section>

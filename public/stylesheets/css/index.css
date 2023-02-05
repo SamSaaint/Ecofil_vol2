@@ -194,8 +194,11 @@
   padding: 3rem 11rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background-color: #EABA5E;
+}
+#about-container h1 {
+  margin-top: 0;
 }
 .about-container-area {
   display: flex;
@@ -459,6 +462,7 @@
 .def-section {
   display: flex;
   justify-content: center;
+  text-align: justify;
   gap: 2rem;
   background-color: #313131;
   color: #b4b4b4;
@@ -654,9 +658,9 @@
   margin: 0;
 }
 #uses-body {
-  padding: 3rem 11rem;
+  padding: 3rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .uses-item {
   display: flex;
@@ -684,6 +688,57 @@
 }
 .uses-text h2 {
   color: #000;
+}
+.image-gallery {
+  overflow-x: scroll;
+}
+.image-gallery .outside {
+  width: 1073.18vw;
+  background: #242424;
+}
+.image-gallery .gallery-list {
+  width: 100vw;
+  transform: translateX(0px);
+  transition: 0.1s all ease;
+}
+.image-gallery .album-strip {
+  display: flex;
+}
+.image-gallery .album-strip .album {
+  margin-right: 0px;
+  padding-top: 0.6vh;
+}
+.image-gallery .album-strip .album img {
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  width: 22vw;
+  aspect-ratio: 4 / 4;
+  object-fit: cover;
+  opacity: 0.6;
+  margin: 0.66vw;
+  transition: 0.2s linear;
+}
+.image-gallery .album-strip .album img:nth-child(:first) {
+  margin-left: 1vw;
+}
+.image-gallery .album-strip .album img:hover {
+  opacity: 1;
+}
+#contact-container {
+  padding: 4rem 3rem;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+}
+#contact-container .contact-area {
+  display: flex;
+  flex-direction: column;
+}
+#contact-container .contact-area h3 {
+  margin: 0;
+}
+#contact-container .contact-area div {
+  margin-bottom: 1rem;
 }
 body {
   margin: 0;
@@ -744,7 +799,7 @@ main {
   background-color: rgba(10, 10, 10, 0.5);
 }
 .uvod {
-  padding: 2rem 3rem;
+  padding: 1rem 3rem;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;

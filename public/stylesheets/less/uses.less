@@ -1,7 +1,7 @@
 #uses-body{
-    .container;
+    padding:3rem;
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .uses-item {
@@ -34,5 +34,37 @@
 }
 
 .image-gallery {
-
+    overflow-x:scroll;
+    .outside {
+        width:23.33vw*46;
+        background: darken(@black-main,5%);
+      }
+      .gallery-list {
+          width: 100vw;
+          transform: translateX(0px);
+          transition: 0.1s all ease;
+      }
+      .album-strip {
+        display: flex; 
+        .album {
+            margin-right: 0px;
+            padding-top: 0.6vh;
+            img {
+                border:1px solid @grey-dark;
+                box-sizing: border-box;
+                width:22vw;
+                aspect-ratio: 4 / 4;
+                object-fit:cover;
+                opacity:0.6;
+                margin:0.66vw;
+                transition:0.2s linear;
+                &:nth-child(:first){
+                    margin-left:1vw;
+                }
+                &:hover {
+                    opacity:1;
+                }
+            }
+        }
+      }
 }
