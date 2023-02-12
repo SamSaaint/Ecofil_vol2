@@ -922,6 +922,8 @@ main {
 }
 .product-form input {
   margin-bottom: 0.3rem;
+  padding: 0.5rem 0.1rem 0.5rem 0.7rem;
+  font-size: 0.8rem;
 }
 #filtrZar {
   background-color: #fff;
@@ -941,6 +943,8 @@ main {
 }
 #product-form-vlozky input {
   margin-bottom: 0.3rem;
+  padding: 0.5rem 0.1rem 0.5rem 0.7rem;
+  font-size: 0.8rem;
 }
 #product-form-vlozky-left {
   display: flex;

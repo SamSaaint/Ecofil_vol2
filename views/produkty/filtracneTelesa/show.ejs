@@ -58,7 +58,11 @@
                     </tr>
                     <tr>
                         <td class="table-title">Filtračná vložka</td>
-                        <td><a href="/produkty/filtracne-vlozky/#<%= teleso.filtrVlozka.typ.slice(-3) %>"><%= teleso.filtrVlozka.typ %></a></td>
+                        <% if(teleso.filtrVlozka){ %>
+                            <td><a href="/produkty/filtracne-vlozky/#<%= teleso.filtrVlozka.typ.slice(-3) %>"> <%= teleso.filtrVlozka.typ %> </a></td>
+                        <% } else { %>
+                            <td> - </td>
+                        <% } %>
                     </tr>
                     <tr>
                         <td class="table-title">Materiál</td>
@@ -71,7 +75,7 @@
                 </tbody>
             </table>
             <div class="item-control">
-                <button><a href="/produkty/filtracne-telesa/<%=teleso._id%>/edit">Upraviť</a></button>
+                <a href="/produkty/filtracne-telesa/<%=teleso._id%>/edit"><button>Upraviť</button></a>
                 <form action="/produkty/filtracne-telesa/<%= teleso._id %>?_method=DELETE" method="POST">
                 <button>Odstrániť</button>
             </div>

@@ -87,7 +87,11 @@
                             </tr>
                             <tr>
                                 <td class="table-title">Filtračná vložka</td>
-                                <td><a href="/produkty/filtracne-vlozky/#<%= teleso.filtrVlozka.typ.slice(-3) %>"> <%= teleso.filtrVlozka.typ %> </a></td>
+                                <% if(teleso.filtrVlozka){ %>
+                                    <td><a href="/produkty/filtracne-vlozky/#<%= teleso.filtrVlozka.typ.slice(-3) %>"> <%= teleso.filtrVlozka.typ %> </a></td>
+                                <% } else { %>
+                                    <td> - </td>
+                                <% } %>
                             </tr>
                             <tr>
                                 <td class="table-title">Materiál</td>
@@ -156,7 +160,11 @@
                                 </tr>
                                 <tr>
                                     <td class="table-title">Filtračná vložka</td>
-                                    <td><a href="/produkty/filtracne-vlozky/#<%= teleso.filtrVlozka.typ.slice(-3) %>"> <%= teleso.filtrVlozka.typ %> </a></td>
+                                    <% if(teleso.filtrVlozka){ %>
+                                        <td><a href="/produkty/filtracne-vlozky/#<%= teleso.filtrVlozka.typ.slice(-3) %>"> <%= teleso.filtrVlozka.typ %> </a></td>
+                                    <% } else { %>
+                                        <td> - </td>
+                                    <% } %>
                                 </tr>
                                 <tr>
                                     <td class="table-title">Materiál</td>
@@ -223,7 +231,11 @@
                                     </tr>
                                     <tr>
                                         <td class="table-title">Filtračná vložka</td>
-                                        <td><a href="/produkty/filtracne-vlozky/#<%= teleso.filtrVlozka.typ.slice(-3) %>"> <%= teleso.filtrVlozka.typ %> </a></td>
+                                        <% if(teleso.filtrVlozka){ %>
+                                            <td><a href="/produkty/filtracne-vlozky/#<%= teleso.filtrVlozka.typ.slice(-3) %>"> <%= teleso.filtrVlozka.typ %> </a></td>
+                                        <% } else { %>
+                                            <td> - </td>
+                                        <% } %>
                                     </tr>
                                     <tr>
                                         <td class="table-title">Materiál</td>
