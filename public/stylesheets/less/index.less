@@ -80,6 +80,40 @@ main {
     background-color:rgba(10,10,10,0.5)
 }
 
+#user-status {
+    position:absolute;
+    right:0.7rem;
+    top:0.7rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: @blue-main;
+    color:#fff;
+    padding:0.5rem 0.8rem;
+    font-size:0.9rem;
+    border-radius:0.5rem;
+    #user-username {
+        color:rgb(66, 245, 66);
+    }
+    button {
+        padding:0.2rem 1rem;
+        border-radius:5px;
+        font-size:0.7rem;
+        background-color: rgb(185, 61, 61);
+        color:#fff; 
+        font-weight: 500;
+        margin-top:0.5rem;
+        border:none;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.mapouter {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
 // generic product section (zariadenia, telesa)
 .uvod {
     padding:1rem 3rem;
@@ -113,8 +147,13 @@ main {
     background:@grey-light;
     padding: 1rem 3rem;
     border-bottom:2px solid @grey-dark;
-    display:flex;
-    align-items:center;
+    a {
+        color:#000;
+        font-size:1.7rem;
+        img {
+            margin-right:0.5rem;
+        }  
+    }
 }
 
 .content {
@@ -216,6 +255,7 @@ main {
         margin-bottom:0.3rem;
         padding:0.5rem 0.1rem 0.5rem 0.7rem;
         font-size:0.8rem;
+        border: none;
     }
 }
 
@@ -239,6 +279,7 @@ main {
         margin-bottom:0.3rem;
         padding:0.5rem 0.1rem 0.5rem 0.7rem;
         font-size:0.8rem;
+        border: none;
     }
 }
 
@@ -273,4 +314,38 @@ main {
     font-weight: 500;
     margin-top:0.5rem;
     color:#fff;
+}
+
+// login/register section
+.user-container {
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.user-form {
+    margin-top:2rem;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    label {
+        display:block;
+    }
+    input {
+        margin:0.3rem 0 0.8rem;
+        font-size:1.2rem;
+    }
+    button {
+        padding:0.4rem 1.2rem;
+        border-radius:5px;
+        font-size:1rem;
+        background-color: @blue-dark;
+        color:#fff; 
+        font-weight: 500;
+        margin-top:0.5rem;
+        border:none;
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }

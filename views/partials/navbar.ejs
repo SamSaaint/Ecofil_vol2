@@ -10,6 +10,14 @@
         <a href="/kontakt"><li>Kontakt</li></a>
         <a href="/download"><li>Na stiahnutie</li></a>
     </ul>
+    <% if(currentUser) { %>
+        <div id="user-status">
+            <span>Prihlásený užívateľ:
+            <span id="user-username"><%= currentUser.username %></span>
+            </span>
+            <a href="/logout"><button>Odhlásiť sa</button></a>
+        </div>
+    <% } %>
 </navbar>
 <div class="product-dropmenu dropmenu-design" id="product-dropmenu">
     <ul>

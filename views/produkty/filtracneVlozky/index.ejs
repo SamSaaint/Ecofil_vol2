@@ -23,9 +23,11 @@
     </div>
 </section>
 
+<% if(currentUser){ %>
 <section class="operations">
-    <a href="/produkty/filtracne-vlozky/new"><img src="/icons/plus-circle-fill.svg" width="40px" alt="pridaj vložku"></a>
+    <a href="/produkty/filtracne-vlozky/new"><img src="/icons/plus-circle-fill.svg" width="25px" alt="pridaj vložku">Pridať filtračnú vložku</a>
     </section>
+<% } %>
 
 <section class="content" id="101">
     <h2 class="content-header">Filtračné vložky rady 101</h2>
@@ -81,11 +83,13 @@
                             </tbody>
                         </table>
                     </div>
-                <div class="item-control">
-                    <a href="/produkty/filtracne-vlozky/<%=vlozka._id%>/edit"><button>Upraviť</button></a>
-                    <form action="/produkty/filtracne-vlozky/<%= vlozka._id %>?_method=DELETE" method="POST">
-                    <button>Odstrániť</button>
-                </div>
+                    <% if(currentUser){ %>
+                        <div class="item-control">
+                            <a href="/produkty/filtracne-vlozky/<%=vlozka._id%>/edit"><button>Upraviť</button></a>
+                            <form action="/produkty/filtracne-vlozky/<%= vlozka._id %>?_method=DELETE" method="POST">
+                            <button>Odstrániť</button>
+                        </div>
+                    <% } %>
                 </section>
                 <% } %>
             <% } %>
@@ -146,11 +150,13 @@
                             </tbody>
                         </table>
                     </div>
-                <div class="item-control">
-                    <button><a href="/produkty/filtracne-vlozky/<%=vlozka._id%>/edit">Upraviť</a></button>
-                    <form action="/produkty/filtracne-vlozky/<%= vlozka._id %>?_method=DELETE" method="POST">
-                    <button>Odstrániť</button>
-                </div>
+                    <% if(currentUser){ %>
+                        <div class="item-control">
+                            <button><a href="/produkty/filtracne-vlozky/<%=vlozka._id%>/edit">Upraviť</a></button>
+                            <form action="/produkty/filtracne-vlozky/<%= vlozka._id %>?_method=DELETE" method="POST">
+                            <button>Odstrániť</button>
+                        </div>
+                    <% } %>
                 </section>
                 <% } %>
             <% } %>
@@ -211,11 +217,13 @@
                             </tbody>
                         </table>
                     </div>
-                <div class="item-control">
-                    <button><a href="/produkty/filtracne-vlozky/<%=vlozka._id%>/edit">Upraviť</a></button>
-                    <form action="/produkty/filtracne-vlozky/<%= vlozka._id %>?_method=DELETE" method="POST">
-                    <button>Odstrániť</button>
-                </div>
+                    <% if(currentUser){ %>
+                        <div class="item-control">
+                            <button><a href="/produkty/filtracne-vlozky/<%=vlozka._id%>/edit">Upraviť</a></button>
+                            <form action="/produkty/filtracne-vlozky/<%= vlozka._id %>?_method=DELETE" method="POST">
+                            <button>Odstrániť</button>
+                        </div>
+                    <% } %>
                 </section>
                 <% } %>
             <% } %>
@@ -276,11 +284,13 @@
                             </tbody>
                         </table>
                     </div>
-                <div class="item-control">
-                    <button><a href="/produkty/filtracne-vlozky/<%=vlozka._id%>/edit">Upraviť</a></button>
-                    <form action="/produkty/filtracne-vlozky/<%= vlozka._id %>?_method=DELETE" method="POST">
-                    <button>Odstrániť</button>
-                </div>
+                    <% if(currentUser){ %>
+                        <div class="item-control">
+                            <button><a href="/produkty/filtracne-vlozky/<%=vlozka._id%>/edit">Upraviť</a></button>
+                            <form action="/produkty/filtracne-vlozky/<%= vlozka._id %>?_method=DELETE" method="POST">
+                            <button>Odstrániť</button>
+                        </div>
+                    <% } %>
                 </section>
                 <% } %>
             <% } %>

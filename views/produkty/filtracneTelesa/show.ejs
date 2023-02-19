@@ -74,11 +74,13 @@
                     </tr>
                 </tbody>
             </table>
-            <div class="item-control">
-                <a href="/produkty/filtracne-telesa/<%=teleso._id%>/edit"><button>Upraviť</button></a>
-                <form action="/produkty/filtracne-telesa/<%= teleso._id %>?_method=DELETE" method="POST">
-                <button>Odstrániť</button>
-            </div>
+            <% if(currentUser){ %>
+                <div class="item-control">
+                    <a href="/produkty/filtracne-telesa/<%=teleso._id%>/edit"><button>Upraviť</button></a>
+                    <form action="/produkty/filtracne-telesa/<%= teleso._id %>?_method=DELETE" method="POST">
+                    <button>Odstrániť</button>
+                </div>
+            <% } %>
         </div>
     </section>
 </section>

@@ -47,5 +47,3 @@ showTable(vlButton, vlTable, hodmTable, kltsTable, poTable,voTable);
 showTable(poButton, poTable, hodmTable, kltsTable, vlTable, voTable);
 showTable(voButton, voTable, hodmTable, kltsTable, vlTable, poTable);
 window.onload = () => hodmButton.click();
-
-//

@@ -258,7 +258,7 @@
   flex-basis: 280px;
   background-color: #f0f0f0;
   margin: 0.7rem;
-  padding-left: 0.7rem;
+  padding: 0.7rem 0.5rem;
   font-size: 0.8rem;
   display: flex;
   flex-direction: column;
@@ -269,14 +269,19 @@
   font-size: 1.2rem;
   font-weight: 500;
   text-align: center;
+  margin: 0rem 0rem 0.5rem;
 }
 .vlozka-item-description ul {
   list-style: none;
   padding: 0;
+  margin: 0.2rem;
 }
 .table-title-vlozka {
   font-weight: 500;
   min-width: 125px;
+  text-align: right;
+  padding: 0.3rem;
+  vertical-align: text-top;
 }
 .vlozka-header {
   display: flex;
@@ -619,7 +624,6 @@
   display: none;
 }
 .ziv-tab tr:nth-child(n+3):hover {
-  cursor: pointer;
   background: rgba(204, 204, 204, 0.5);
 }
 .table-visible {
@@ -805,6 +809,38 @@ main {
   width: 100%;
   background-color: rgba(10, 10, 10, 0.5);
 }
+#user-status {
+  position: absolute;
+  right: 0.7rem;
+  top: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #04549c;
+  color: #fff;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+}
+#user-status #user-username {
+  color: #42f542;
+}
+#user-status button {
+  padding: 0.2rem 1rem;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  background-color: #b93d3d;
+  color: #fff;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  border: none;
+}
+#user-status button:hover {
+  cursor: pointer;
+}
+.mapouter {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
 .uvod {
   padding: 1rem 3rem;
   display: flex;
@@ -834,8 +870,13 @@ main {
   background: #f6f6f6;
   padding: 1rem 3rem;
   border-bottom: 2px solid #d9d9d9;
-  display: flex;
-  align-items: center;
+}
+.operations a {
+  color: #000;
+  font-size: 1.7rem;
+}
+.operations a img {
+  margin-right: 0.5rem;
 }
 .content {
   padding: 2rem 3rem;
@@ -924,6 +965,7 @@ main {
   margin-bottom: 0.3rem;
   padding: 0.5rem 0.1rem 0.5rem 0.7rem;
   font-size: 0.8rem;
+  border: none;
 }
 #filtrZar {
   background-color: #fff;
@@ -945,6 +987,7 @@ main {
   margin-bottom: 0.3rem;
   padding: 0.5rem 0.1rem 0.5rem 0.7rem;
   font-size: 0.8rem;
+  border: none;
 }
 #product-form-vlozky-left {
   display: flex;
@@ -975,4 +1018,35 @@ main {
   font-weight: 500;
   margin-top: 0.5rem;
   color: #fff;
+}
+.user-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user-form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user-form label {
+  display: block;
+}
+.user-form input {
+  margin: 0.3rem 0 0.8rem;
+  font-size: 1.2rem;
+}
+.user-form button {
+  padding: 0.4rem 1.2rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #044278;
+  color: #fff;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  border: none;
+}
+.user-form button:hover {
+  cursor: pointer;
 }

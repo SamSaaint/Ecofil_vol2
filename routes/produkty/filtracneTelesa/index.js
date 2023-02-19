@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Teleso = require("../../../models/filtracneTeleso");
 const Vlozka = require("../../../models/filtracnaVlozka");
+const { isLoggedIn } = require("../../../middleware");
 
 // show all
 router.get("/",async (req,res)=>{
@@ -10,12 +11,12 @@ router.get("/",async (req,res)=>{
 })
 
 //add new teleso
-router.get("/new", async (req,res)=>{
+router.get("/new",isLoggedIn, async (req,res)=>{
     const vlozky = await Vlozka.find({});
     res.render("../views/produkty/filtracneTelesa/new", { vlozky })
 })
 
-router.post("/", async (req,res)=>{
+router.post("/",isLoggedIn, async (req,res)=>{
     const teleso = await new Teleso(req.body.filtracneTeleso);
     await teleso.save();
     res.redirect("/produkty/filtracne-telesa");
@@ -29,13 +30,13 @@ router.get("/:id", async (req,res)=>{
 })
 
 // edit teleso
-router.get("/:id/edit", async (req,res)=>{
+router.get("/:id/edit",isLoggedIn, async (req,res)=>{
     const teleso = await Teleso.findById(req.params.id);
     const vlozky = await Vlozka.find({}); 
     res.render("../views/produkty/filtracneTelesa/edit", { teleso, vlozky })
 })
 
-router.put("/:id", async (req,res)=>{
+router.put("/:id",isLoggedIn, async (req,res)=>{
     const { id } = req.params;
     const teleso = await Teleso.findByIdAndUpdate(id, {...req.body.filtracneTeleso})
     await teleso.save();
@@ -43,7 +44,7 @@ router.put("/:id", async (req,res)=>{
 })
 
 // delete teleso
-router.delete("/:id", async (req,res)=>{
+router.delete("/:id",isLoggedIn, async (req,res)=>{
     const { id } = req.params;
     await Teleso.findByIdAndDelete(id);
     res.redirect("/produkty/filtracne-telesa");

@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Zariadenie = require("../../../models/filtracneZariadenie");
+const { isLoggedIn } = require("../../../middleware");
 
 // show all
 router.get("/",async (req,res)=>{
@@ -9,11 +10,11 @@ router.get("/",async (req,res)=>{
 })
 
 // add new zariadenie
-router.get("/new", (req,res)=>{
+router.get("/new",isLoggedIn, (req,res)=>{
     res.render("../views/produkty/filtracneZariadenia/new")
 })
 
-router.post("/", async (req,res)=>{
+router.post("/",isLoggedIn, async (req,res)=>{
     const zariadenie = new Zariadenie(req.body.filtracneZariadenie);
     await zariadenie.save();
     res.redirect("/produkty/filtracne-zariadenia");
@@ -27,12 +28,12 @@ router.get("/:id", async (req,res)=>{
 })
 
 // edit zariadenie
-router.get("/:id/edit", async (req,res)=>{
+router.get("/:id/edit",isLoggedIn, async (req,res)=>{
     const zariadenie = await Zariadenie.findById(req.params.id)
     res.render("../views/produkty/filtracneZariadenia/edit", { zariadenie })
 })
 
-router.put("/:id", async (req,res)=>{
+router.put("/:id",isLoggedIn, async (req,res)=>{
     const { id } = req.params;
     const zariadenie = await Zariadenie.findByIdAndUpdate(id, {...req.body.filtracneZariadenie})
     await zariadenie.save();
@@ -40,7 +41,7 @@ router.put("/:id", async (req,res)=>{
 })
 
 // delete zariadenie
-router.delete("/:id", async (req,res)=>{
+router.delete("/:id",isLoggedIn, async (req,res)=>{
     const { id } = req.params;
     await Zariadenie.findByIdAndDelete(id);
     res.redirect("/produkty/filtracne-zariadenia");

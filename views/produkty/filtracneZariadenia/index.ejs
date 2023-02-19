@@ -24,9 +24,11 @@
         </div>
 </section>
 
-<section class="operations">
-    <a href="/produkty/filtracne-zariadenia/new"><img src="/icons/plus-circle-fill.svg" width="40px" alt="pridaj zariadenie"></a>
-</section>
+<% if(currentUser){ %>
+    <section class="operations">
+        <a href="/produkty/filtracne-zariadenia/new"><img src="/icons/plus-circle-fill.svg" width="25px" alt="pridaj zariadenie">Pridať filtračné zariadenie</a>
+    </section>
+<% } %>
 
 <section class="content">
     <h2 class="content-header">Filtračné zariadenia rady SN</h2>
