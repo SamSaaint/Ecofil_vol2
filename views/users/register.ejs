@@ -1,15 +1,17 @@
 <% layout("layouts/boilerplate") %>
 <section class="container user-container">
-    <h1>Registrujte sa</h1>
-    <form class="user-form" action="/register" method="POST">
-        <div>
-            <label for="username">Používateľské meno</label>
-            <input type="text" name="username" id="username" required>
-        </div>
-        <div>
-            <label for="password">Heslo</label>
-            <input type="password" name="password" id="password" required>
-        </div>
-        <button>Potvrdiť</button>
-    </form>
+    <section class="user-form-container">
+        <h1>Registrujte sa</h1>
+        <form class="user-form" action="/register" method="POST">
+            <div>
+                <label for="username">Používateľské meno</label>
+                <input type="text" name="username" id="username" required>
+            </div>
+            <div>
+                <label for="password">Heslo</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <button>Potvrdiť</button>
+        </form>
+    </section>
 </section>

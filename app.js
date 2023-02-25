@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV !== "production"){
+    require("dotenv").config();
+}
+
 const express = require("express");
 const path = require("path");
 const ejsMate = require("ejs-mate");
@@ -9,7 +13,7 @@ const User = require("./models/user");
 const methodOverride = require("method-override");
 const produktyRoutes = require("./routes/produkty");
 const filtraciaRoutes = require("./routes/filtracia");
-const userRoutes = require("./routes/users");   
+const userRoutes = require("./routes/users");
 
 // express setup
 const app = express();

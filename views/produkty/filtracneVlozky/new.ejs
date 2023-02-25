@@ -1,7 +1,7 @@
 <% layout("layouts/boilerplate") %>
 <section class="container-narrow">
     <h2>Pridaj novú filtračnú vložku</h2>
-    <form id="product-form-vlozky" action="/produkty/filtracne-vlozky" method="POST">
+    <form id="product-form-vlozky" action="/produkty/filtracne-vlozky" method="POST" enctype="multipart/form-data">
         <div id="product-form-vlozky-left">
             <div>
                 <label for="typ">Typ</label>
@@ -9,7 +9,7 @@
             </div>
             <div>
                 <label for="obrazok">Fotka</label>
-                <input type="text" name="filtracnaVlozka[obrazok]" id="obrazok" required>
+                <input type="file" name="obrazok" id="obrazok" required>
             </div>
             <div>
                 <label for="material">Materiál</label>

@@ -111,7 +111,7 @@ main {
 }
 
 .mapouter {
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
 }
 
 // generic product section (zariadenia, telesa)
@@ -149,10 +149,14 @@ main {
     border-bottom:2px solid @grey-dark;
     a {
         color:#000;
+        transition:0.1s linear;
         font-size:1.7rem;
         img {
             margin-right:0.5rem;
         }  
+        &:hover {
+            color:rgb(57, 130, 57);
+        }
     }
 }
 
@@ -321,6 +325,20 @@ main {
     display:flex;
     flex-direction:column;
     align-items: center;
+    .user-form-container {
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+        margin-top:2rem;
+        border:2px solid @grey-medium;
+        border-radius:5px;
+        padding:1.5rem 2.5rem;
+        background-color: @grey-light;
+        h1 {
+            margin:0;
+            font-size:2.5rem;
+        }
+    }
 }
 
 .user-form {

@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const Zariadenie = require("../../../models/filtracneZariadenie");
 const { isLoggedIn } = require("../../../middleware");
+const multer = require("multer");
+const { storage } = require("../../../cloudinary");
+const upload = multer({ storage });
 
 // show all
 router.get("/",async (req,res)=>{
@@ -14,8 +17,10 @@ router.get("/new",isLoggedIn, (req,res)=>{
     res.render("../views/produkty/filtracneZariadenia/new")
 })
 
-router.post("/",isLoggedIn, async (req,res)=>{
+router.post("/",isLoggedIn, upload.single('obrazok'), async (req,res)=>{
     const zariadenie = new Zariadenie(req.body.filtracneZariadenie);
+    const { filename, path } = req.file;
+    zariadenie.obrazok = { path, filename };
     await zariadenie.save();
     res.redirect("/produkty/filtracne-zariadenia");
 })

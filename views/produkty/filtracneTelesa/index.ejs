@@ -41,7 +41,7 @@
             <% if(teleso.kategoria == "Séria T"){ %>
             <section onclick="location.href='/produkty/filtracne-telesa/<%=teleso._id%>'" class="content-item">
                 <div class="content-item-img">
-                    <img src="<%= teleso.obrazok %>" alt="obrazok" width="200px">
+                    <img src="<%= teleso.obrazok.path %>" alt="obrazok" width="200px">
                 </div>
                 <div class="content-item-description">
                     <h3><%= teleso.nazov %></h3>
@@ -114,7 +114,7 @@
                 <% if(teleso.kategoria == "Séria H"){ %>
                 <section onclick="location.href='/produkty/filtracne-telesa/<%=teleso._id%>'" class="content-item">
                     <div class="content-item-img">
-                        <img src="<%= teleso.obrazok %>" alt="obrazok" width="200px">
+                        <img src="<%= teleso.obrazok.path %>" alt="obrazok" width="200px">
                     </div>
                     <div class="content-item-description">
                         <h3><%= teleso.nazov %></h3>
@@ -185,7 +185,7 @@
                     <% if(teleso.kategoria == "Ostatné"){ %>
                     <section onclick="location.href='/produkty/filtracne-telesa/<%=teleso._id%>'" class="content-item">
                         <div class="content-item-img">
-                            <img src="<%= teleso.obrazok %>" alt="obrazok" width="200px">
+                            <img src="<%= teleso.obrazok.path %>" alt="obrazok" width="200px">
                         </div>
                         <div class="content-item-description">
                             <h3><%= teleso.nazov %></h3>

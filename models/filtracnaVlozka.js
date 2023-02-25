@@ -1,8 +1,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const obrazokSchema = new Schema({
+    path: String,
+    filename: String
+});
+
 const vlozkaSchema = new Schema({
-    obrazok: String,
+    obrazok: obrazokSchema,
     typ: String,
     material: String,
     priemer: Number,

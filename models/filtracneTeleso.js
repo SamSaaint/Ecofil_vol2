@@ -1,9 +1,14 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const obrazokSchema = new Schema({
+    path: String,
+    filename: String
+});
+
 const telesoSchema = new Schema({
     nazov: String,
-    obrazok: String,
+    obrazok: obrazokSchema,
     normPrietok: String,
     filtrSchopnost: String,
     maxTepOleja: String,

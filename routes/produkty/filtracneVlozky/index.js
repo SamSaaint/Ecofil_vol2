@@ -3,6 +3,9 @@ const router = express.Router();
 const Vlozka = require("../../../models/filtracnaVlozka");
 const Zariadenie = require("../../../models/filtracneZariadenie");
 const { isLoggedIn } = require("../../../middleware");
+const multer = require("multer");
+const { storage } = require("../../../cloudinary");
+const upload = multer({ storage });
 
 // show all
 router.get("/", async (req,res)=>{
@@ -16,8 +19,10 @@ router.get("/new",isLoggedIn, async (req,res)=>{
     res.render("../views/produkty/filtracneVlozky/new", { zariadenia })
 })
 
-router.post("/",isLoggedIn, async (req,res)=>{
+router.post("/",isLoggedIn, upload.single('obrazok'), async (req,res)=>{
     const vlozka = new Vlozka(req.body.filtracnaVlozka);
+    const { filename, path } = req.file;
+    vlozka.obrazok = { path, filename };
     await vlozka.save();
     res.redirect("/produkty/filtracne-vlozky");
 })

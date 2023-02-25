@@ -3,6 +3,9 @@ const router = express.Router();
 const Teleso = require("../../../models/filtracneTeleso");
 const Vlozka = require("../../../models/filtracnaVlozka");
 const { isLoggedIn } = require("../../../middleware");
+const multer = require("multer");
+const { storage } = require("../../../cloudinary");
+const upload = multer({ storage });
 
 // show all
 router.get("/",async (req,res)=>{
@@ -16,8 +19,10 @@ router.get("/new",isLoggedIn, async (req,res)=>{
     res.render("../views/produkty/filtracneTelesa/new", { vlozky })
 })
 
-router.post("/",isLoggedIn, async (req,res)=>{
+router.post("/",isLoggedIn, upload.single('obrazok'), async (req,res)=>{
     const teleso = await new Teleso(req.body.filtracneTeleso);
+    const { filename, path } = req.file;
+    teleso.obrazok = { path, filename };
     await teleso.save();
     res.redirect("/produkty/filtracne-telesa");
 })
