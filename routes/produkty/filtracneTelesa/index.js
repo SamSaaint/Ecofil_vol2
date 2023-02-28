@@ -38,13 +38,15 @@ router.get("/:id", async (req,res)=>{
 router.get("/:id/edit",isLoggedIn, async (req,res)=>{
     const teleso = await Teleso.findById(req.params.id);
     const vlozky = await Vlozka.find({}); 
-    res.render("../views/produkty/filtracneTelesa/edit", { teleso, vlozky })
+    res.render("../views/produkty/filtracneTelesa/edit", { teleso, vlozky });
 })
 
-router.put("/:id",isLoggedIn, async (req,res)=>{
+router.put("/:id",isLoggedIn, upload.single('obrazok'), async (req,res)=>{
     const { id } = req.params;
-    const teleso = await Teleso.findByIdAndUpdate(id, {...req.body.filtracneTeleso})
-    await teleso.save();
+    const teleso = await Teleso.findByIdAndUpdate(id, {...req.body.filtracneTeleso});
+    const { filename, path } = req.file;
+    teleso.obrazok = { path, filename };
+    teleso.save();
     res.redirect(`/produkty/filtracne-telesa/${teleso._id}`);
 })
 

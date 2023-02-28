@@ -34,9 +34,11 @@ router.get("/:id/edit",isLoggedIn, async (req,res)=>{
     res.render("../views/produkty/filtracneVlozky/edit", { vlozka, zariadenia });
 })
 
-router.put("/:id",isLoggedIn, async (req,res)=>{
+router.put("/:id",isLoggedIn, upload.single('obrazok'), async (req,res)=>{
     const { id } = req.params;
-    const vlozka = await Vlozka.findByIdAndUpdate(id, { ...req.body.filtracnaVlozka })
+    const vlozka = await Vlozka.findByIdAndUpdate(id, { ...req.body.filtracnaVlozka });
+    const { filename, path } = req.file;
+    vlozka.obrazok = { path, filename };
     await vlozka.save();
     res.redirect("/produkty/filtracne-vlozky");
 })

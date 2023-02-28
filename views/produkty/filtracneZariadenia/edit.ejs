@@ -1,14 +1,14 @@
 <% layout("layouts/boilerplate") %>
 <div class="container-narrow">
     <h2>Úprava filtračného zariadenia</h2>
-    <form class="product-form" action="/produkty/filtracne-zariadenia/<%=zariadenie._id%>?_method=PUT" method="POST">
+    <form class="product-form" action="/produkty/filtracne-zariadenia/<%=zariadenie._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
         <div>
             <label for="nazov">Názov</label>
             <input type="text" name="filtracneZariadenie[nazov]" value="<%= zariadenie.nazov %>" id="nazov" required>
         </div>
         <div>
             <label for="obrazok">Fotka</label>
-            <input type="text" name="filtracneZariadenie[obrazok]" value="<%= zariadenie.obrazok %>" id="obrazok" required>
+            <input type="file" name="obrazok" id="obrazok" required>
         </div>
         <div>
             <label for="objOlejNad">Objem olejovej nádrže</label>

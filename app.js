@@ -72,7 +72,7 @@ app.use("/filtracia-oleja", filtraciaRoutes);
 app.use("/", userRoutes);
 
 // home route
-app.get("/", (req,res)=> res.render("home"));
+app.get("/", (req,res)=> res.render("home", { title:"Ecofil - svetový líder v by-passovej filtrácii" }));
 
 //tribodiagnostika route
 app.get("/tribodiagnostika", (req,res)=> res.render("tribodiagnostika"));

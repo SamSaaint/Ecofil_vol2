@@ -38,9 +38,11 @@ router.get("/:id/edit",isLoggedIn, async (req,res)=>{
     res.render("../views/produkty/filtracneZariadenia/edit", { zariadenie })
 })
 
-router.put("/:id",isLoggedIn, async (req,res)=>{
+router.put("/:id",isLoggedIn, upload.single("obrazok"), async (req,res)=>{
     const { id } = req.params;
-    const zariadenie = await Zariadenie.findByIdAndUpdate(id, {...req.body.filtracneZariadenie})
+    const zariadenie = await Zariadenie.findByIdAndUpdate(id, {...req.body.filtracneZariadenie});
+    const { filename, path } = req.file;
+    zariadenie.obrazok = { path, filename };
     await zariadenie.save();
     res.redirect(`/produkty/filtracne-zariadenia/${zariadenie._id}`);
 })
