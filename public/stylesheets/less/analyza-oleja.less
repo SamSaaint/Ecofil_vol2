@@ -5,6 +5,10 @@
     gap:1.7rem;
     background-color: @grey-medium;
     box-sizing: border-box;
+    @media @420 {
+        flex-wrap: wrap;
+        padding:2rem 4rem;
+    }
 }
 
 .ao-pic {
@@ -21,4 +25,31 @@
     justify-content: space-evenly;
     background-color: @grey-medium;
     color:@blue-dark;
+    padding:2rem 3rem;
+    @media @1200 {
+        iframe {
+            max-width:460px;
+        }
+    }
+    @media @1050 {
+        h2 {
+            font-size: 1.5rem;
+        }
+        justify-content: space-between;
+    }
+    @media @1200 {
+        iframe {
+            max-width:300px;
+            max-height:168px;
+        }
+    }
+    @media @800 {
+        display:block;
+    }
+    @media @420 {
+        iframe {
+            max-width:250px;
+            max-height:140px;
+        }
+    }
 }

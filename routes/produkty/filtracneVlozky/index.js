@@ -10,13 +10,13 @@ const upload = multer({ storage });
 // show all
 router.get("/", async (req,res)=>{
     const vlozky = await Vlozka.find({}).populate({ path:"filtrZar" });
-    res.render("../views/produkty/filtracneVlozky", { vlozky })
+    res.render("../views/produkty/filtracneVlozky", { vlozky, title:"Filtračné vložky" })
 })
 
 // add new vlozka
 router.get("/new",isLoggedIn, async (req,res)=>{
     const zariadenia = await Zariadenie.find({});
-    res.render("../views/produkty/filtracneVlozky/new", { zariadenia })
+    res.render("../views/produkty/filtracneVlozky/new", { zariadenia, title:"Filtračné vložky" })
 })
 
 router.post("/",isLoggedIn, upload.single('obrazok'), async (req,res)=>{
@@ -31,7 +31,7 @@ router.post("/",isLoggedIn, upload.single('obrazok'), async (req,res)=>{
 router.get("/:id/edit",isLoggedIn, async (req,res)=>{
     const vlozka = await Vlozka.findById(req.params.id);
     const zariadenia = await Zariadenie.find({});
-    res.render("../views/produkty/filtracneVlozky/edit", { vlozka, zariadenia });
+    res.render("../views/produkty/filtracneVlozky/edit", { vlozka, zariadenia, title:"Filtračné vložky"});
 })
 
 router.put("/:id",isLoggedIn, upload.single('obrazok'), async (req,res)=>{

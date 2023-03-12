@@ -11,19 +11,19 @@ router.use("/filtracne-vlozky", filtracneVlozkyRoutes);
 router.use("/magneticka-filtracia", magFiltraciaRoutes);
 
 router.get("/",(req,res)=>{
-    res.render("../views/produkty/index")
+    res.render("../views/produkty/index", {title:"Produkty"})
 });
 
 router.get("/magneticka-filtracia",(req,res)=>{
-    res.render("../views/produkty/magneticka-filtracia")
+    res.render("../views/produkty/magneticka-filtracia", {title:"Magnetická filtrácia"})
 })
 
 router.get("/analyza-oleja",(req,res)=>{
-    res.render("../views/produkty/analyza-oleja")
+    res.render("../views/produkty/analyza-oleja", {title:"Analýza oleja"})
 })
 
 router.get("/aquameter",(req,res)=>{
-    res.render("../views/produkty/aquameter")
+    res.render("../views/produkty/aquameter", {title:"Aquameter"})
 })
 
 module.exports = router;

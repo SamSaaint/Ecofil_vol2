@@ -2,6 +2,26 @@
     padding:3rem;
     display:flex;
     justify-content: space-around;
+    @media @1200 {
+        img {
+            max-width:320px;
+        }
+    }
+    @media @1050 {
+        img  {
+            max-width:290px;   
+        }
+    }
+    @media @800 {
+        flex-direction: column;
+        padding:1rem 3rem;
+        img {
+            display:none;
+        }
+    }
+    @media @420 {
+        padding:1rem;
+    }
 }
 
 .uses-item {
@@ -14,6 +34,20 @@
     img {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
+    }
+    @media @800 {
+        ul {
+            columns:3;
+        }
+        border-radius:0;
+        padding:1rem;
+        margin:0.5rem 0;
+        border-radius: 10px;
+    }
+    @media @420 {
+        ul {
+            columns:2;
+        }
     }
 }
 
@@ -30,6 +64,9 @@
     }
     h2 {
         color:#000;
+        @media @800 {
+            color:@blue-dark;
+        }
     }
 }
 
@@ -38,6 +75,9 @@
     .outside {
         width:23.33vw*46;
         background: darken(@black-main,5%);
+        @media @800 {
+            width:45.37vw*46;
+        }
       }
       .gallery-list {
           width: 100vw;
@@ -46,6 +86,12 @@
       }
       .album-strip {
         display: flex; 
+        @media @800 {
+            padding-left: 0.6rem;
+        }
+        @media @420 {
+            padding-left:0.1rem;
+        }
         .album {
             margin-right: 0px;
             padding-top: 0.6vh;
@@ -63,6 +109,9 @@
                 }
                 &:hover {
                     opacity:1;
+                }
+                @media @800 {
+                    width:44vw;
                 }
             }
         }

@@ -72,19 +72,19 @@ app.use("/filtracia-oleja", filtraciaRoutes);
 app.use("/", userRoutes);
 
 // home route
-app.get("/", (req,res)=> res.render("home", { title:"Ecofil - svetový líder v by-passovej filtrácii" }));
+app.get("/", (req,res)=> res.render("home", {title:"Ecofil - svetový líder v by-passovej filtrácií"}));
 
 //tribodiagnostika route
-app.get("/tribodiagnostika", (req,res)=> res.render("tribodiagnostika"));
+app.get("/tribodiagnostika", (req,res)=> res.render("tribodiagnostika", {title:"Tribodiagnostika"}));
 
 //vyuzitie route
-app.get("/vyuzitie", (req,res)=> res.render("vyuzitie"));
+app.get("/vyuzitie", (req,res)=> res.render("vyuzitie", {title:"Využitie"}));
 
 //kontakt route
-app.get("/kontakt", (req,res)=> res.render("kontakt"));
+app.get("/kontakt", (req,res)=> res.render("kontakt", {title:"Kontakt"}));
 
 //download route
-app.get("/download", (req,res)=> res.render("download"));
+app.get("/download", (req,res)=> res.render("download", {title:"Na stiahnutie"}));
 
 // server setup
 const port = process.env.PORT || 3000;

@@ -4,7 +4,7 @@ const passport = require("passport");
 const User = require("../models/user");
 
 router.get("/register", (req,res)=>{
-    res.render("users/register");
+    res.render("users/register", {title:"Registrácia"});
 })
 
 router.post("/register", async (req,res)=>{
@@ -22,7 +22,7 @@ router.post("/register", async (req,res)=>{
 })
 
 router.get("/login", (req,res)=>{
-    res.render("users/login")
+    res.render("users/login", {title:"Prihlasovanie"})
 })
 
 router.post("/login", passport.authenticate("local", { successRedirect:"/", failureRedirect: "/login" }));

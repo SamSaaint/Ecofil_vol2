@@ -8,6 +8,10 @@
     background-color: @grey-medium;
     box-sizing: border-box;
     margin:2rem 0;
+    @media @800 {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 .trib-pic {
@@ -19,5 +23,20 @@
     };
     img {
         object-fit:cover;
+        @media @800 {
+            max-width:150px;
+            max-height: 150px;
+        }
+        @media @420 {
+            max-width:120px;
+            max-height: 120px;
+        }
+
+    }
+    @media @800 {
+        flex-basis:150px;
+    }
+    @media @420 {
+        flex-basis:120px;
     }
 }

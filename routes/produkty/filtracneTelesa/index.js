@@ -10,13 +10,13 @@ const upload = multer({ storage });
 // show all
 router.get("/",async (req,res)=>{
     const telesa = await Teleso.find({}).populate({path:"filtrVlozka"});
-    res.render("../views/produkty/filtracneTelesa", { telesa });
+    res.render("../views/produkty/filtracneTelesa", { telesa, title:"Filtračné telesá" });
 })
 
 //add new teleso
 router.get("/new",isLoggedIn, async (req,res)=>{
     const vlozky = await Vlozka.find({});
-    res.render("../views/produkty/filtracneTelesa/new", { vlozky })
+    res.render("../views/produkty/filtracneTelesa/new", { vlozky, title:"Filtračné telesá" })
 })
 
 router.post("/",isLoggedIn, upload.single('obrazok'), async (req,res)=>{
@@ -31,21 +31,23 @@ router.post("/",isLoggedIn, upload.single('obrazok'), async (req,res)=>{
 router.get("/:id", async (req,res)=>{
     const id = req.params.id;
     const teleso = await Teleso.findById(id).populate({path:"filtrVlozka"});
-    res.render("../views/produkty/filtracneTelesa/show", { teleso })
+    res.render("../views/produkty/filtracneTelesa/show", { teleso, title:"Filtračné telesá" })
 })
 
 // edit teleso
 router.get("/:id/edit",isLoggedIn, async (req,res)=>{
     const teleso = await Teleso.findById(req.params.id);
     const vlozky = await Vlozka.find({}); 
-    res.render("../views/produkty/filtracneTelesa/edit", { teleso, vlozky });
+    res.render("../views/produkty/filtracneTelesa/edit", { teleso, vlozky, title:"Filtračné telesá" });
 })
 
 router.put("/:id",isLoggedIn, upload.single('obrazok'), async (req,res)=>{
     const { id } = req.params;
     const teleso = await Teleso.findByIdAndUpdate(id, {...req.body.filtracneTeleso});
-    const { filename, path } = req.file;
-    teleso.obrazok = { path, filename };
+    if(req.file){
+        const { filename, path } = req.file;
+        teleso.obrazok = { path, filename };
+    }
     teleso.save();
     res.redirect(`/produkty/filtracne-telesa/${teleso._id}`);
 })

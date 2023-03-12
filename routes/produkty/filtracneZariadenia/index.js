@@ -9,12 +9,12 @@ const upload = multer({ storage });
 // show all
 router.get("/",async (req,res)=>{
     const zariadenia = await Zariadenie.find({});
-    res.render("../views/produkty/filtracneZariadenia", {zariadenia})
+    res.render("../views/produkty/filtracneZariadenia", {zariadenia, title:"Filtračné zariadenia"})
 })
 
 // add new zariadenie
 router.get("/new",isLoggedIn, (req,res)=>{
-    res.render("../views/produkty/filtracneZariadenia/new")
+    res.render("../views/produkty/filtracneZariadenia/new", {title:"Filtračné zariadenia"})
 })
 
 router.post("/",isLoggedIn, upload.single('obrazok'), async (req,res)=>{
@@ -29,13 +29,13 @@ router.post("/",isLoggedIn, upload.single('obrazok'), async (req,res)=>{
 router.get("/:id", async (req,res)=>{
     const id = req.params.id;
     const zariadenie = await Zariadenie.findById(id);
-    res.render("../views/produkty/filtracneZariadenia/show", { zariadenie })
+    res.render("../views/produkty/filtracneZariadenia/show", { zariadenie, title:"Filtračné zariadenia"})
 })
 
 // edit zariadenie
 router.get("/:id/edit",isLoggedIn, async (req,res)=>{
     const zariadenie = await Zariadenie.findById(req.params.id)
-    res.render("../views/produkty/filtracneZariadenia/edit", { zariadenie })
+    res.render("../views/produkty/filtracneZariadenia/edit", { zariadenie, title:"Filtračné zariadenia"})
 })
 
 router.put("/:id",isLoggedIn, upload.single("obrazok"), async (req,res)=>{

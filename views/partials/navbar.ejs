@@ -2,7 +2,7 @@
     <div id="logo_main">
         <a href="/"><img src="/logos/logo_main.png" alt="hlavne_logo"></a>    
     </div>
-    <ul>
+    <ul class="navbar-main-menu">
         <a class="product-dropmenu" href="/produkty"><li>Produkty</li></a>
         <a href="/tribodiagnostika"><li>Tribodiagnostika</li></a>
         <a class="filtracia-dropmenu" href="/filtracia-oleja"><li>Filtrácia oleja</li></a>
@@ -10,6 +10,11 @@
         <a href="/kontakt"><li>Kontakt</li></a>
         <a href="/download"><li>Na stiahnutie</li></a>
     </ul>
+    <div id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
     <% if(currentUser) { %>
         <div id="user-status">
             <span>Prihlásený užívateľ:
@@ -19,6 +24,7 @@
         </div>
     <% } %>
 </navbar>
+
 <div class="product-dropmenu dropmenu-design" id="product-dropmenu">
     <ul>
         <a href="/produkty/filtracne-telesa"><li>Filtračné telesá</li></a>

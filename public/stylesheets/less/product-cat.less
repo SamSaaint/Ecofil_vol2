@@ -1,5 +1,9 @@
 .categories-container {
     background-color:@grey-medium;
+    padding:2rem 3rem;
+    @media @420 {
+        padding:1.5rem 0rem;
+    }
 }
 
 .categories {
@@ -28,5 +32,23 @@
     h2 {
         color:@grey-light;
         margin-bottom:1.5rem;
+    }
+    @media @800 {
+        width:80%;
+        padding-bottom:2rem;
+        h2 {
+            font-size:2.7rem;
+        }
+    } 
+    @media @420 {
+        img {
+            max-width:200px;
+        }
+    }
+    @media @420 {
+        margin:0.5rem;
+        h2 {
+            font-size:1.8rem;
+        }
     }
 }

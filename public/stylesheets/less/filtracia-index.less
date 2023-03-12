@@ -10,6 +10,10 @@
     position:absolute;
     right:1rem;
     bottom:1rem;
+    @media @800 {
+        bottom:0.3rem;
+        right:0.3rem;
+    }
 }
 
 .fi-category-item {
@@ -21,7 +25,6 @@
     flex-direction:column;
     background:@grey-dark;
     border-radius:5px;
-    text-align: justify;
     &:hover {
         transform:translateY(-5px);
         transition:0.2s linear;
@@ -30,6 +33,15 @@
         .read-more {
             color: rgb(195, 145, 52);
         }
+    }
+    @media @1200 {
+        flex-basis:400px;
+    }
+    @media @1050 {
+        flex-basis:370px;
+    }
+    @media @800 {
+        flex-basis:100%;
     }
 }
 
@@ -43,14 +55,19 @@
     h2 {
         color:@orange-dark;
     }
+    @media @800 {
+        padding:1rem;
+    }
 }
 .def-section {
     display:flex;
     justify-content: center;
-    text-align: justify;
     gap:2rem;
     background-color: @black-main;
-    color:rgb(180, 180, 180);  
+    color:rgb(180, 180, 180);
+    @media @800 {
+        display:block;
+    }
 }
 
 .def-section-item {
@@ -93,12 +110,25 @@
         color:@grey-light;
         margin-bottom:1.5rem;
     }
+    @media @420 {
+        iframe {
+            max-width:300px;
+            max-height:162px;
+        }
+    }
 }
 
 // generic section style
 .filtr-sec-container {
     display:flex;
     background-color:@grey-medium;
+    @media @800 {
+        flex-direction: column;
+        padding:0;
+    }
+    @media @420 {
+        
+    }
 }
 
 .filtr-sec-left {
@@ -125,6 +155,9 @@
     li:hover{
         color:@orange-main;
     }
+    @media @800 {
+        display:block;
+    }
 }
 
 .filtr-sec-right {
@@ -134,7 +167,6 @@
     margin: 0 2.5rem;
     padding:1rem 2.5rem;
     color:@black-main;
-    text-align: justify;
     h2 {
         margin-bottom:2rem;
         font-weight: 500;
@@ -151,13 +183,36 @@
         display:inline-block;
         font-size:1rem;
     }
+    @media @1050 {
+        margin-left:0.5rem;
+        padding:1rem;
+        h2 {
+            margin:1rem 0;
+        }
+    }
+    @media @800 {
+        width:100%;
+        box-sizing: border-box;
+        margin:0;
+    }
+    @media @420 {
+        margin:0;
+    }
 }
 
 .filtr-sec-right-bypass {
     display:flex;
     img {
         margin-left:1rem;
+        max-width:300px;
     };
+    @media @1200 {
+        flex-direction:column;
+        align-items: center;
+        img {
+            margin:0;
+        }
+    }
 }
 
 .filtr-sec-visual {
@@ -176,5 +231,20 @@
     p {
         font-size:0.8rem;
         line-height:1.1rem;
+    }
+    @media @1200 {
+        flex-direction:column;
+        align-items: center;
+        margin:1rem;
+        padding:1rem;
+        p {
+            text-align: center;
+        }
+        div {
+            margin:0;
+        }
+        img {
+            margin-bottom:0.5rem;
+        }
     }
 }
