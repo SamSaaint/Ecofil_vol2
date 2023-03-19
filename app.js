@@ -14,6 +14,9 @@ const methodOverride = require("method-override");
 const produktyRoutes = require("./routes/produkty");
 const filtraciaRoutes = require("./routes/filtracia");
 const userRoutes = require("./routes/users");
+const dbUrl = process.env.MONGO_DB_URL;
+const dbUrlLocal = 'mongodb://localhost:27017/ecofil';
+const MongoStore = require('connect-mongo');
 
 // express setup
 const app = express();
@@ -24,9 +27,17 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
-const secret = "thisshouldbeabettersecret"; 
+const secret = "thisshouldbeabettersecret";
+
+const store = MongoStore.create({
+    //mongoUrl name of the key is mandatory, otherwise client init error 
+    mongoUrl:dbUrl,
+    secret:"mydogisquiteoldbutbehaveslikeapup",
+    touchAfter: 24*60*60
+});
 
 const sessionConfig = {
+    store,
     name:"ourCustomCookieName", // default is connect.sid, change name to prevent injection
     secret,
     resave: false,
@@ -49,7 +60,7 @@ passport.deserializeUser(User.deserializeUser());
 
 // database setup
 mongoose.set("strictQuery",true);
-mongoose.connect('mongodb://localhost:27017/ecofil', {
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     UseUnifiedTopology: true
 });
