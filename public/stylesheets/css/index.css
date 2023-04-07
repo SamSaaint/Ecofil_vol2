@@ -495,6 +495,11 @@
   display: flex;
   flex-wrap: wrap;
 }
+@media only screen and (max-width: 420px) {
+  .vlozka-items {
+    justify-content: center;
+  }
+}
 .vlozka-item {
   flex-basis: 280px;
   background-color: #f0f0f0;
@@ -1619,6 +1624,11 @@ main {
   background: #f6f6f6;
   display: flex;
   flex-direction: column;
+}
+@media only screen and (max-width: 420px) {
+  .content {
+    padding: 1rem 1rem 0;
+  }
 }
 .content-header {
   display: inline;
