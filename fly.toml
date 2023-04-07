@@ -1,0 +1,33 @@
+# fly.toml file generated for ecofilsro on 2023-04-05T12:48:25+02:00
+
+app = "ecofilsro"
+kill_signal = "SIGINT"
+kill_timeout = 5
+mounts = []
+primary_region = "waw"
+processes = []
+
+[env]
+  PORT = "8080"
+  CLOUDINARY_CLOUD_NAME = "drgyvmobr"
+  CLOUDINARY_KEY = "699817951712875"
+  CLOUDINARY_SECRET = "7w4P2msmQBXjc3cxqj08jMze1sw"
+  MONGO_DB_URL = "mongodb+srv://samo4:Mesutozil(10)@cluster0.burgu43.mongodb.net/?retryWrites=true&w=majority"
+
+[[services]]
+  internal_port = 8080
+  processes = ["app"]
+  protocol = "tcp"
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+  [[services.ports]]
+    force_https = true
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443

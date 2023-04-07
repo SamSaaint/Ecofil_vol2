@@ -248,6 +248,11 @@
 #footer-container p span {
   color: red;
 }
+@media only screen and (max-width: 1050px) {
+  #footer-container {
+    transform: translateY(65px);
+  }
+}
 #parallax-1 {
   background-image: url(/images/parallax1.jpg);
 }
@@ -312,8 +317,7 @@
 }
 @media only screen and (max-width: 420px) {
   #zak-prog-container ul {
-    list-style: none;
-    padding-inline-start: 0px;
+    padding-inline-start: 20px;
   }
 }
 #historia-container {
@@ -386,6 +390,9 @@
 }
 .about-container-area p {
   margin: 0.5rem 0;
+}
+.about-container-area a {
+  color: #313131 !important;
 }
 @media only screen and (max-width: 1200px) {
   .about-container-area .mapouter {
@@ -968,6 +975,7 @@
 }
 .eco-ft-video {
   background-color: #4b4b4b;
+  padding: 1rem;
 }
 .eco-ft-video h2 {
   color: #f6f6f6;
@@ -1543,6 +1551,11 @@ main {
   background: linear-gradient(0.25turn, #022b4e, #044278);
   color: #f6f6f6;
 }
+@media only screen and (max-width: 420px) {
+  .uvod {
+    padding: 1rem;
+  }
+}
 .uvod-text {
   font-size: 0.8rem;
 }
@@ -1563,6 +1576,17 @@ main {
   }
   .uvod-text li {
     line-height: 1rem;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .uvod-text {
+    font-size: 1rem;
+  }
+  .uvod-text p {
+    line-height: 1.6rem;
+  }
+  .uvod-text li {
+    line-height: 1.5rem;
   }
 }
 .uvod-img {
@@ -1761,6 +1785,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 1rem;
 }
 .user-container .user-form-container {
   display: flex;

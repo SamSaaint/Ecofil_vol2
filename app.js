@@ -98,5 +98,5 @@ app.get("/kontakt", (req,res)=> res.render("kontakt", {title:"Kontakt"}));
 app.get("/download", (req,res)=> res.render("download", {title:"Na stiahnutie"}));
 
 // server setup
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 app.listen(port, ()=> console.log(`Listening on port ${port}.`));
