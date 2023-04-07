@@ -1615,15 +1615,10 @@ main {
   color: #398239;
 }
 .content {
-  padding: 2rem 3rem;
+  padding: 2rem 3rem 0;
   background: #f6f6f6;
   display: flex;
   flex-direction: column;
-}
-@media only screen and (max-width: 420px) {
-  .content {
-    padding: 0;
-  }
 }
 .content-header {
   display: inline;
@@ -1687,6 +1682,10 @@ main {
 .table-title {
   font-weight: 600;
   text-align: right;
+  margin-right: 1rem;
+}
+.table-title::after {
+  content: ": ";
 }
 .item-control {
   display: flex;

@@ -204,7 +204,7 @@ main {
 }
 
 .content {
-    .container-narrow;
+    padding:2rem 3rem 0;
     background:@grey-light;
     display:flex;
     flex-direction:column;
@@ -272,6 +272,11 @@ main {
 .table-title {
     font-weight: 600;
     text-align:right;
+    margin-right:1rem;
+}
+
+.table-title::after {
+    content:": "
 }
 
 // generic product show page (zariadenia, telesa) + item control
