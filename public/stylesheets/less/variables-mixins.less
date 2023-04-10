@@ -23,6 +23,7 @@
 @800: ~"only screen and (max-width: 800px)";
 @420: ~"only screen and (max-width: 420px)";
 @380: ~"only screen and (max-width: 380px)";
+@320: ~"only screen and (max-width: 320px)";
 
 // mixins
 .container {
@@ -76,7 +77,11 @@
         margin:0;
         display:flex;
         @media @420 {
-            font-size: 0.7rem;
+            font-size:1rem;
+            padding-left:0.8rem;
+        }
+        @media @320 {
+            font-size:0.8rem;
         }
     }
     li {

@@ -56,7 +56,13 @@
 }
 @media only screen and (max-width: 420px) {
   .breadcrumbs ul {
-    font-size: 0.7rem;
+    font-size: 1rem;
+    padding-left: 0.8rem;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .breadcrumbs ul {
+    font-size: 0.8rem;
   }
 }
 .breadcrumbs li {
@@ -669,6 +675,9 @@
   }
 }
 @media only screen and (max-width: 420px) {
+  .mg-fi-item {
+    margin-bottom: 1rem;
+  }
   .mg-fi-item h2 {
     font-size: 1.5rem;
     margin: 0;
