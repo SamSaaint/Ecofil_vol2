@@ -259,11 +259,34 @@
     transform: translateY(65px);
   }
 }
+#line1 {
+  transition: 0.2s linear;
+}
+#line2 {
+  transition: 0.3s linear;
+}
+#line3 {
+  transition: 0.4s linear;
+}
+#line4 {
+  transition: 0.5s linear;
+}
+#line5 {
+  transition: 0.6s linear;
+}
+.initial-state {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+.final-state {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
 #parallax-1 {
-  background-image: url(/images/parallax1.jpg);
+  background-image: url(/images/parallax1.webp);
 }
 #parallax-2 {
-  background-image: url(/images/parallax2.jpg);
+  background-image: url(/images/parallax2.webp);
 }
 #video-container {
   height: 300px;
